@@ -342,7 +342,8 @@ function switchRating() {
                         .style("fill", function(d) {
                             k++; 
                             if (k < selectedList.length && selectedList[k][3] == "Winner") {return `${colour}`}
-                            else { return "grey" };
+                            else { return "#"+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50) };
+
                         })
             }
             else {
@@ -373,13 +374,13 @@ function switchRating() {
             //https://bl.ocks.org/d3noob/464c92429ac05c6a19a1
             .style("fill", function(d) {
                 if (d.Award == "Winner") {return `${ghostColour}`}
-                else { return "grey" };
+                else { return "#"+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50) };
             })
             .attr("cursor","pointer")
             .transition().duration(1000)
             .style("fill", function(d) {
                 if (d.Award == "Winner") {return `${colour}`}
-                else { return "grey" };
+                else { return "#"+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50) };
             })
             .attr("transform", function(d) {
                 return `translate(${[x(d.Year), y(d[group])]})`;
@@ -417,7 +418,7 @@ function switchRating() {
                     .style("fill", function(d) {
                         k++; 
                         if (k < selectedList.length && selectedList[k][3] == "Winner") {return `${colour}`}
-                        else { return "grey" };
+                        else { return "#"+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50)+parseInt(selectedList[k][metaOrUser]/3+50) };
                     });     
         }   
     })
