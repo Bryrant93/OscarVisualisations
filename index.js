@@ -262,9 +262,9 @@ const svg = d3.select("#my_dataviz2")
     .enter()
     .append("rect")
         .attr("class", function(d) {return "vertbox box"+d.Year})
-        .attr("x", function(d) {return (d.Year-1989)*37.74-7})
+        .attr("x", function(d) {return (d.Year-1989)*37.74-8})
         .attr("y",-.4)
-        .attr("width",14)
+        .attr("width",16)
         .attr("height",419.6)
         .attr("fill","#383838")
         .attr("cursor","pointer")
@@ -366,7 +366,7 @@ function switchRating() {
             })
             .attr("d", function(d) {
                 const path = d3.path();
-                d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,60) : d3.symbolCircle.draw(path,15);
+                d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,75) : d3.symbolCircle.draw(path,15);
                 return path.toString();
             })
             .on("click", highlight)
