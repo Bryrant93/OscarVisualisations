@@ -77,7 +77,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
     .attr("transform","translate(-30,440)rotate(-90)")
     .call(y1)
     .append("text")
-    .attr("fill", "white")//set the fill here
+    .attr("fill", "white")
     .text("No. of years the highest rated film won Best Picture");
   
 
@@ -103,7 +103,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
         
   
   // Show the bars
-  svg1.selectAll(".selectrect").on("mouseenter", function(d, i) {
     svg1.append("g")
       .selectAll("g")
       // Enter in data = loop group per group
@@ -126,8 +125,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
         .attr("fill", d => color1(d.key));
 
   })
-})
-
 // https://www.d3-graph-gallery.com/graph/scatter_basic.html
 
 var highest = "HighestMS"
@@ -429,5 +426,7 @@ function switchRating() {
     // svg.selectAll(".filmbox").remove();
     svg.selectAll(".filmtext").remove();
 }
+
+switchRating();
 
 switchRating();
