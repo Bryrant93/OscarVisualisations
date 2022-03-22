@@ -81,16 +81,16 @@ svg {
 #flexbox .para{
     margin: 2px 30px;
     font-size: .9em;
-    width: 680px;
+    width: 560px;
     order: 1;
 }
 #empty {
-    width: 530px;
+    width: 485px;
     order: 2;
 }
 #button_container {
+    width: 130px;
     margin-top: 10px;
-    padding-right: -20px;
     z-index: 10;
     order: 3;
 }
