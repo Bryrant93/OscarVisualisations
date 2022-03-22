@@ -353,7 +353,7 @@ function switchRating() {
             }
         }
         d3.selectAll(".vertbox").on("click",highlight)
-        
+        console.log("run")
         
  
         //https://stackoverflow.com/questions/64688719/how-to-make-a-scatterplot-based-upon-certain-criteria-using-d3-js
