@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oscar Charts</title>
+        <link rel="stylesheet" href="styles.css"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&family=Limelight&display=swap">
+        <script src="https://d3js.org/d3.v7.min.js" defer></script>
+        
+    </head>
+    <body>
+        <h1>Are the Academy out of touch?</h1>
+        <div class="para">Every year the Academy Awards roll around, and people talk about how the Academy voters are out of touch with the general cinema-going population. Accusations that they are only interested in giving ‘oscarbait’ films the Best Picture Oscar are abound. But how true is that?</div>
+        <h2>Consensus through the decades</h2>
+        <div class="para">I have taken data from two film aggregate sites (RottenTomatoes and MetaCritic) and extracted each of their Critic Scores and User Scores for every film nominated for Best Picture in the last 40 years. The following visualisation displays how often the Best Picture winner was also the highest rated film by each group over the years. Please mouse over the chart to begin.</div>
+        
+        <div id="my_dataviz"></div>
+        <h3>Critic versus Audience Consensus</h3>
+        <div id=flexbox>
+            <div class="para">The following visualisation displays the rating of each Best Picture Nominee from 1990-2020 as ranked by Metacritic’s Metascore (represented as critics on the chart) and User Score (represented as audience on the chart). You can use the appropriate buttons on the right to see how opinions differ between the two groups across the years. Please note some films receive the same rating, so appear on top of each other, for a more accurate listing of nominees by year click on the corresponding vertical grey box.</div>
+            <div id="empty"></div>
+            <div id="button_container">
+                <button id="Critic">Critic</button><button id="Audience">Audience</button>
+            </div>
+        </div>
+        
+        <div id="my_dataviz2"></div>
+        <script src="index.js" defer></script>
+        
+        <script src="index.js" defer></script>
+    </body>
+</html>
