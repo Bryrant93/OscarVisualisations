@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(46, 46, 46);
     color: white;
     font-family: Hahmlet;
     text-align: center;
@@ -44,7 +44,7 @@ svg {
 
 .grid line {
     stroke: rgb(194, 194, 194);
-    opacity: 0.1;
+    opacity: 0.25;
     shape-rendering:crispEdges;
     }
   
@@ -54,7 +54,7 @@ svg {
 
 .grid1 line {
     stroke: rgb(194, 194, 194);
-    opacity: 0.1;
+    opacity: 0.25;
     shape-rendering:crispEdges;
     }
     

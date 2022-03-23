@@ -125,6 +125,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
         .attr("fill", d => color1(d.key));
 
   })
+//SECOND GRAPH
 // https://www.d3-graph-gallery.com/graph/scatter_basic.html
 
 var highest = "HighestMS"
@@ -157,12 +158,6 @@ d3.select("#Audience").on("click", function(d, i) {
         switchRating();
     } 
   });
-// d3.select("#Reset").on("click", function(d, i) {
-//     console.log("Hello")
-//     d3.selectAll(".filmbox").remove();
-//     d3.selectAll(".filmtext").remove();
-//     d3.selectAll(".vertbox").style("fill","#383838");
-//   });
 
 // set the dimensions and margins of the graph
 const margin = {top: 10, right: 30, bottom: 30, left: 60},
@@ -195,7 +190,7 @@ const svg = d3.select("#my_dataviz2")
         .append("line")
         .attr("x1", 0)
         .attr("y1", height)
-        .attr("x2",1177)
+        .attr("x2",1178)
         .attr("y2",height)
         .attr("stroke","white")
 
@@ -214,7 +209,7 @@ const svg = d3.select("#my_dataviz2")
         .attr("y",427)
         .attr("width",25)
         .attr("height", 10)
-        .style("fill","#333333")
+        .style("fill","#2e2e2e")
                    
     // Add Y axis
     const y = d3.scaleLinear()
@@ -240,19 +235,19 @@ const svg = d3.select("#my_dataviz2")
         .text("Critic/Audience  rating  %");
     svg.append("rect").attr("x", 545).attr("y",-132).attr("width",265).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "2.967,3")
     svg.append("line").attr("x1", 737).attr("y1",-17).attr("x2",737).attr("y2",420).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "3,3")
-    svg.append("text").text("In 2009 the Academy increased the number ")
+    svg.append("text").text("In 2009 the Academy changed the rules for")
         .attr("x", 549).attr("y",-118).style("font-size", "12px")
-    svg.append("text").text("of films allowed to be nominated for Best ")
+    svg.append("text").text("voting on nominees and winners for the")
         .attr("x", 549).attr("y",-103).style("font-size", "12px")
-    svg.append("text").text("Picture to ten, in an effort to allow more ")
+    svg.append("text").text("Best Picture Oscar, this included increasing ")
         .attr("x", 549).attr("y",-88).style("font-size", "12px")
-    svg.append("text").text("unconventional picks to be nominated. ")
+    svg.append("text").text("the number of nominees to ten and ")
         .attr("x", 549).attr("y",-73).style("font-size", "12px")
-    svg.append("text").text("They also changed the voting method for ")
+    svg.append("text").text("introduce runoff voting. Changes that")
         .attr("x", 549).attr("y",-58).style("font-size", "12px")
-    svg.append("text").text("determining the winner, which has proved")
+    svg.append("text").text("proved controversial with some, claiming it ")
         .attr("x", 549).attr("y",-43).style("font-size", "12px")
-    svg.append("text").text("controversial with some movie fans.")
+    svg.append("text").text("would promote more generic winners.")
         .attr("x", 549).attr("y",-28).style("font-size", "12px")
     d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFinal2.csv").then( function(data) {
     //Create graphic year rectangles
@@ -262,16 +257,28 @@ const svg = d3.select("#my_dataviz2")
     .enter()
     .append("rect")
         .attr("class", function(d) {return "vertbox box"+d.Year})
-        .attr("x", function(d) {return (d.Year-1989)*37.74-8})
+        .attr("x", function(d) {if (d.Award == "Winner") {return (d.Year-1989)*37.74-8} else {return -100}})
         .attr("y",-.4)
         .attr("width",16)
-        .attr("height",419.6)
+        .attr("height",419.4)
         .attr("fill","#383838")
         .attr("cursor","pointer")
     })
 var filmBoxOpen = null
 var currentYear = 0
+
+svg.append("rect").attr("x", -35).attr("y",-137).attr("width",570).attr("height",125).attr("fill","#383838")
+        svg.append("rect").attr("x", 825).attr("y",-132).attr("width",353).attr("height",115).attr("fill","#383838")
+        svg.append("circle").attr("cx",840).attr("cy",-112).attr("r", 6).style("fill", "grey")
+        svg.append("text").attr("x", 860).attr("y", -110).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+        svg.append("text").attr("x", 860).attr("y", -80).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+        svg.append("text").attr("x", 860).attr("y", -30).text(`with Academy winner`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+
+
 function switchRating() {
+    svg.selectAll(".dots").remove();
+    svg.selectAll(".filmtext").remove();
+    svg.selectAll(".legend").remove();
     //Read the data
     d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFinal3.csv").then( function(data) { 
         //Create film list box on mouseover        
@@ -310,6 +317,7 @@ function switchRating() {
                 if (selectedList[0][metaOrUser]==selectedList[1][metaOrUser]){
                     [selectedList[0], selectedList[1]] = [selectedList[1], selectedList[0]]
                 }
+                
                 //filmbox
                 svg.append("g")
                     .selectAll("rect")
@@ -323,7 +331,7 @@ function switchRating() {
                         .attr("height", 20*selectedList.length+7)
                         .attr("fill","#383838")
                 filmBoxOpen = true;
-
+                
                 var i = -1
                 var j = -1
                 var k = -1
@@ -366,7 +374,7 @@ function switchRating() {
             })
             .attr("d", function(d) {
                 const path = d3.path();
-                d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,75) : d3.symbolCircle.draw(path,15);
+                d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,75) : d3.symbolCircle.draw(path,10);
                 return path.toString();
             })
             .on("click", highlight)
@@ -385,17 +393,11 @@ function switchRating() {
                 return `translate(${[x(d.Year), y(d[group])]})`;
             })        
 
-            // Handmade legend
-        svg.append("rect").attr("x", -35).attr("y",-137).attr("width",570).attr("height",125).attr("fill","#383838").attr("class","legend")
-        svg.append("rect").attr("x", 825).attr("y",-132).attr("width",353).attr("height",115).attr("fill","#383838").attr("class","legend")
-        svg.append("circle").attr("cx",840).attr("cy",-112).attr("r", 6).style("fill", "grey").attr("class","legend")
+        // legend
         svg.append("circle").attr("cx",840).attr("cy",-82).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
         svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(80)).attr("transform", "translate(840.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
-        svg.append("text").attr("x", 860).attr("y", -110).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
-        svg.append("text").attr("x", 860).attr("y", -80).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
         svg.append("text").attr("x", 860).attr("y", -50).text(`${legend} winner agrees`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
-        svg.append("text").attr("x", 860).attr("y", -30).text(`with Academy winner`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
-
+        
         if (filmBoxOpen == true) {
             selectedList = filmList.sort((a, b) => b[metaOrUser] - a[metaOrUser])
             
@@ -421,10 +423,6 @@ function switchRating() {
                     });     
         }   
     })
-    svg.selectAll(".dots").remove();
-    svg.selectAll(".legend").remove();
-    // svg.selectAll(".filmbox").remove();
-    svg.selectAll(".filmtext").remove();
 }
 
 switchRating();
