@@ -124,7 +124,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
 // set the dimensions and margins of the graph
 const margin = {top: 10, right: 30, bottom: 30, left: 60},
     width = 1260 - margin.left - margin.right,
-    height = 460 - margin.top - margin.bottom;
+    height = 471 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3.select("#my_dataviz2")
@@ -134,7 +134,7 @@ const svg = d3.select("#my_dataviz2")
     .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top+125})`);
     
-d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/oscarFrameFinal3.csv").then( function(data) { 
+d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFinal5.csv").then( function(data) { 
 
     var highest = "HighestMS"
     var group = "MetaScore"
@@ -171,7 +171,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
 
     // Add X-axis
     const x = d3.scaleLinear()
-        .domain([1989, 2020])
+        .domain([1995, 2021])
         .range([ 0, width ]);
     svg.append("g")
         .attr("transform", `translate(0, ${height})`)
@@ -196,7 +196,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
     svg.append("g")
         .append("rect")
         .attr("x", -11)
-        .attr("y",427)
+        .attr("y",438)
         .attr("width",25)
         .attr("height", 10)
         .style("fill","#2e2e2e")
@@ -233,7 +233,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
 
     //Add red-box and red-line
     svg.append("rect").attr("x", 545).attr("y",-132).attr("width",290).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "2.967,3")
-    svg.append("line").attr("x1", 737).attr("y1",-17).attr("x2",737).attr("y2",420).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "3,3")
+    svg.append("line").attr("x1", 608).attr("y1",-17).attr("x2",608).attr("y2",429.2).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "3,3")
     svg.append("rect").attr("x", 0).attr("y",-132).attr("width",535).attr("height",115).attr("fill","#383838")
 
 
@@ -241,7 +241,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
     svg.append("rect").attr("x", 844).attr("y",-132).attr("width",334).attr("height",115).attr("fill","#383838")
     svg.append("circle").attr("cx",860).attr("cy",-112).attr("r", 6).style("fill", "grey")
     svg.append("circle").attr("cx",860).attr("cy",-82).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
-    svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(80)).attr("transform", "translate(860.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
+    svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(860.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
     svg.append("text").attr("x", 880).attr("y", -110.5).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     svg.append("text").attr("x", 880).attr("y", -80.5).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     svg.append("text").attr("x", 880).attr("y", -50).text(`${legend} winner agrees`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
@@ -254,10 +254,10 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
     .enter()
     .append("rect")
         .attr("class", function(d) {return "vertbox box"+d.Year})
-        .attr("x", function(d) {if (d.Award == "Winner") {return (d.Year-1989)*37.74-8} else {return -100}})
+        .attr("x", function(d) {return (d.Year-1995)*45-9})
         .attr("y",-.5)
-        .attr("width",16)
-        .attr("height",419.8)
+        .attr("width",18)
+        .attr("height",430.8)
         .attr("fill","#383838")
         .attr("cursor","pointer")
 
@@ -326,10 +326,10 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
                 .enter()    
                 .append("rect")
                     .attr("class","filmbox")
-                    .attr("x", selectedYear < 2009 ? (selectedYear-1989)*37.74+7 :(selectedYear-1989)* 37.74-(longestFilmTitle + 49))
-                    .attr("y",412.5-(20*selectedList.length+1))
+                    .attr("x", selectedYear < 2009 ? (d.Year-1995)*45+7 :(d.Year-1995)*45-(longestFilmTitle + 49))
+                    .attr("y",423.5-(20*selectedList.length+1))
                     .attr("width",longestFilmTitle+42)
-                    .attr("height", 20*selectedList.length+7)
+                    .attr("height", d.Year == 2021 ? 20*selectedList.length+7 : 20*selectedList.length+7)
                     .attr("fill","#383838")
             filmBoxOpen = true;
             
@@ -344,8 +344,8 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
                 .append("text")
                     .attr("class", "filmtext")
                     .text(function(d) {if (i < selectedList.length-1) {i++; return selectedList[i][0] + " - " + selectedList[i][metaOrUser]+"%"}})
-                    .attr("x", selectedYear < 2009 ? (selectedYear-1989)*37.74+13 :(selectedYear-1989)* 37.74-(longestFilmTitle + 44))
-                    .attr("y", function(d) {if (j < selectedList.length-1) {j++; return (425.5-(20*selectedList.length+1))+(j*20.5)}})
+                    .attr("x", selectedYear < 2009 ? (d.Year-1995)*45+14 :(d.Year-1995)*45-(longestFilmTitle + 44))
+                    .attr("y", function(d) {if (j < selectedList.length-1) {j++; return (436.5-(20*selectedList.length+1))+(j*20.5)}})
                     .attr("alignment-baseline","middle")
                     .style("font-size", "15px")
                     .style("fill", function(d) {
@@ -373,7 +373,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
         })
         .attr("d", function(d) {
             const path = d3.path();
-            d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,75) : d3.symbolCircle.draw(path,10);
+            d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,100) : d3.symbolCircle.draw(path,10);
             return path.toString();
         })
         //https://bl.ocks.org/d3noob/464c92429ac05c6a19a1
@@ -402,7 +402,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
             })
             .attr("d", function(d) {
                 const path = d3.path();
-                d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,75) : d3.symbolCircle.draw(path,10);
+                d[highest] == "Yes" && d.Award == "Winner" ? d3.symbolStar.draw(path,100) : d3.symbolCircle.draw(path,10);
                 return path.toString();
             })
             .on("click", highlight)
@@ -423,7 +423,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
 
         //Changing elements of the legend that need changing
         svg.append("circle").attr("cx",860).attr("cy",-82).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
-        svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(80)).attr("transform", "translate(860.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
+        svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(860.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
         svg.append("text").attr("x", 880).attr("y", -50).text(`${legend} winner agrees`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
         
         //Changing order of filmtext within the film box depending on changing
@@ -441,8 +441,8 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
                 .append("text")
                     .attr("class", "filmtext")
                     .text(function(d) {if (i < selectedList.length-1) {i++; return selectedList[i][0] + " - " + selectedList[i][metaOrUser]+"%"}})
-                    .attr("x", selectedYear < 2009 ? (selectedYear-1989)*37.74+13 :(selectedYear-1989)* 37.74-(longestFilmTitle + 44))
-                    .attr("y", function(d) {if (j < selectedList.length-1) {j++; return (425.5-(20*selectedList.length+1))+(j*20.5)}})
+                    .attr("x", selectedYear < 2009 ? (selectedYear-1995)*45+14 :(selectedYear-1995)*45-(longestFilmTitle + 44))
+                    .attr("y", function(d) {if (j < selectedList.length-1) {j++; return (436.5-(20*selectedList.length+1))+(j*20.5)}})
                     .attr("alignment-baseline","middle")
                     .style("font-size", "15px")
                     .style("fill", function(d) {
