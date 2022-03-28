@@ -14,7 +14,7 @@ const svg1 = d3.select("#my_dataviz")
     .attr("transform",`translate(${margin1.left},${margin1.top})`);
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/winnersFrame9.csv").then( function(data1) {
+d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame10.csv").then( function(data1) {
   // List of subgroups = header of the csv files = soil condition here
   const subgroups = data1.columns.slice(1)
   // List of groups = species here = value of the first column called group -> I show them on the X axis
@@ -31,7 +31,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
     .style("color","#ffffff");
   svg1.append("g")
     .attr('class', 'axis1')
-    .attr("transform","translate(520,520)")
+    .attr("transform","translate(525,520)")
     .call(x1)
     .append("text")
     .attr("fill", "white")//set the fill here
@@ -56,22 +56,17 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
     .style("color","white");
   
   // Handmade legend
-  svg1.append("rect").attr("x", 795).attr("y",13).attr("width",300).attr("height",180).attr("fill","#353535")
+  svg1.append("rect").attr("x", 795).attr("y",13).attr("width",300).attr("height",95).attr("fill","#353535")
   svg1.append("rect").attr("x",810).attr("y",52).attr("width",12).attr("height",12).style("fill", "#e87411")
-  svg1.append("rect").attr("x",810).attr("y",82).attr("width",12).attr("height",12).style("fill", "#f5992b")
-  svg1.append("rect").attr("x",810).attr("y",137.5).attr("width",12).attr("height",12).style("fill", "#004c6d")
-  svg1.append("rect").attr("x",810).attr("y",167.5).attr("width",12).attr("height",12).style("fill", "#00a1c1")
-  svg1.append("text").attr("x", 810).attr("y", 35).text("Critics").style("font-size", "17px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("font-weight",500)
-  svg1.append("text").attr("x", 830).attr("y", 60).text("Rotten Tomatoes Tomatometer").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-  svg1.append("text").attr("x", 830).attr("y", 90).text("Metacritic MetaScore").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-  svg1.append("text").attr("x", 810).attr("y", 120).text("Audience").style("font-size", "17px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("font-weight",500)
-  svg1.append("text").attr("x", 830).attr("y", 145).text("Rotten Tomatoes Audience Score").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-  svg1.append("text").attr("x", 830).attr("y", 175).text("Metacritic User Score").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+  svg1.append("rect").attr("x",810).attr("y",82).attr("width",12).attr("height",12).style("fill", "#00a1c1")
+  svg1.append("text").attr("x", 810).attr("y", 35).text("Critic & Audience Groups").style("font-size", "17px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("font-weight",500)
+  svg1.append("text").attr("x", 830).attr("y", 60).text("Metacritic MetaScore").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+  svg1.append("text").attr("x", 830).attr("y", 90).text("Metacritic User Score").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
 
 
   svg1.append("g")
     .attr('class', 'axis1')
-    .attr("transform","translate(-30,440)rotate(-90)")
+    .attr("transform","translate(-30,400)rotate(-90)")
     .call(y1)
     .append("text")
     .attr("fill", "white")
@@ -90,7 +85,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
   // color palette = one color per subgroup
   const color1 = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(['#e87411','#f5992b','#004c6d','#00a1c1'])
+    .range(['#f5992b','#00a1c1'])
         
   
   // Show the bars
@@ -130,11 +125,11 @@ const margin = {top: 10, right: 30, bottom: 30, left: 60},
 const svg = d3.select("#my_dataviz2")
     .append("svg")
         .attr("width", width + margin.left + margin.right)
-        .attr("height", height + 140 + margin.top + margin.bottom)
+        .attr("height", height + 131 + margin.top + margin.bottom)
     .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top+125})`);
     
-d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFinal5.csv").then( function(data) { 
+d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFinal8.csv").then( function(data) { 
 
     var highest = "HighestMS"
     var group = "MetaScore"
@@ -181,13 +176,13 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
         .append("line")
         .attr("x1", 0)
         .attr("y1", height)
-        .attr("x2",1178)
+        .attr("x2",1179)
         .attr("y2",height)
         .attr("stroke","white")
     // Add X-axis label
     svg.append("g")
         .attr('class', 'axis')
-        .attr("transform","translate(545,460)")
+        .attr("transform","translate(574,466)")
         .call(x)
         .append("text")
         .attr("fill", "white")
@@ -225,27 +220,27 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
     // Add the Y-Axis label 
     svg.append("g")
         .attr('class', 'axis')
-        .attr("transform","translate(-30,303)rotate(-90)")
+        .attr("transform","translate(-30,288)rotate(-90)")
         .call(y)
         .append("text")
         .attr("fill", "white")
         .text("Critic/Audience  rating  %");
 
     //Add red-box and red-line
-    svg.append("rect").attr("x", 545).attr("y",-132).attr("width",290).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "2.967,3")
-    svg.append("line").attr("x1", 608).attr("y1",-17).attr("x2",608).attr("y2",429.2).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "3,3")
-    svg.append("rect").attr("x", 0).attr("y",-132).attr("width",535).attr("height",115).attr("fill","#383838")
+    svg.append("rect").attr("x", 545).attr("y",-127).attr("width",290).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "2.95,3")
+    svg.append("line").attr("x1", 608).attr("y1",-12).attr("x2",608).attr("y2",429.2).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "3,3")
+    svg.append("rect").attr("x", 0).attr("y",-127).attr("width",535).attr("height",115).attr("fill","#383838")
 
 
     //Add legend
-    svg.append("rect").attr("x", 844).attr("y",-132).attr("width",334).attr("height",115).attr("fill","#383838")
-    svg.append("circle").attr("cx",860).attr("cy",-112).attr("r", 6).style("fill", "grey")
-    svg.append("circle").attr("cx",860).attr("cy",-82).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
+    svg.append("rect").attr("x", 844).attr("y",-127).attr("width",334).attr("height",115).attr("fill","#383838")
+    svg.append("circle").attr("cx",860).attr("cy",-107).attr("r", 6).style("fill", "grey")
+    svg.append("circle").attr("cx",860).attr("cy",-77).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
     svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(860.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
-    svg.append("text").attr("x", 880).attr("y", -110.5).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg.append("text").attr("x", 880).attr("y", -80.5).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg.append("text").attr("x", 880).attr("y", -50).text(`${legend} winner agrees`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
-    svg.append("text").attr("x", 880).attr("y", -30).text(`with Academy winner`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg.append("text").attr("x", 880).attr("y", -107.5).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg.append("text").attr("x", 880).attr("y", -77.5).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg.append("text").attr("x", 880).attr("y", -47).text(`${legend} winner agrees`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
+    svg.append("text").attr("x", 880).attr("y", -27).text(`with Academy winner`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
 
     //Create graphic year rectangles
     svg.append('g')
@@ -300,8 +295,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
                     getWidth: getWidth
                 };
             })(); 
-            console.log(Catamaran)
-            
+
             //Creating film list for the selected year then sorted according to the currently selected rating grou[]
             for (film of data){
                 filmLength = BrowserText.getWidth(film.Film,16,"Catamaran")
