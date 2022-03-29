@@ -227,8 +227,8 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
         .text("Critic/Audience  rating  %");
 
     //Add red-box and red-line
-    svg.append("rect").attr("x", 410).attr("y",-127).attr("width",396).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "2.95,3")
-    svg.append("line").attr("x1", 608).attr("y1",-12).attr("x2",608).attr("y2",429.2).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "3,3")
+    svg.append("rect").attr("x", 410).attr("y",-127).attr("width",396).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "4,3").style("stroke-width","2.5px")
+    svg.append("line").attr("x1", 608).attr("y1",-13.1).attr("x2",608).attr("y2",430.4).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "4,3").style("stroke-width","2.5px")
     // svg.append("rect").attr("x", -15).attr("y",-127).attr("width",410).attr("height",115).attr("fill","#383838")
     svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${colour}`).attr("class", "title").attr("letter-spacing", "3px")
     svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", "#343434").attr("class", "title")
@@ -431,12 +431,12 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
         
         svg.selectAll(".title").remove();
         if (group == "MetaScore") {
-            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#363636`).transition().duration(500).style("fill", `${colour}`).attr("class","title").attr("letter-spacing", "3px")
-            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#363636`).attr("class","title")
+            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#303030`).transition().duration(500).style("fill", `${colour}`).attr("class","title").attr("letter-spacing", "3px")
+            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#303030`).attr("class","title")
         }
         if (group == "UserScore") {
-            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#363636`).attr("class","title").attr("letter-spacing", "3px")
-            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#363636`).transition().duration(500).style("fill", `${colour}`).attr("class","title")
+            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#303030`).attr("class","title").attr("letter-spacing", "3px")
+            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#303030`).transition().duration(500).style("fill", `${colour}`).attr("class","title")
     
         }
     

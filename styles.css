@@ -95,7 +95,7 @@ svg {
 }
 
 #empty {
-    width: 400px;
+    width: 385px;
     margin-top: 10px;
     margin-left: 10px;
     order: 2;
@@ -137,16 +137,6 @@ svg {
         position: absolute;
     }
     
-    #flexbox .para{
-        margin-right: 10px;
-        font-size: .9em;
-        width: 440px;
-        order: 1;
-    }
-    #empty {
-        width: 390px;
-        order: 2;
-    }
     #button_container {
         width: 205px;
         margin-top: 10px;
