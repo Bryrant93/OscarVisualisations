@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(44, 44, 44);
     color: rgb(233, 239, 241);
     text-align: center;
     font-size: .95em;
@@ -12,6 +12,7 @@ h1 {
     color: white;
     font-family: Limelight;
     margin-bottom: 0;
+    text-decoration: underline;
 }
 h2 {
     color: white;
@@ -25,7 +26,6 @@ h3 {
     margin-top: 0;
     margin-bottom: 7px;
     font-size: 1.5em;
-
 }
 
 svg {
@@ -113,6 +113,7 @@ svg {
     height: 50px;
     width: 120px;
     border-right: 15px solid #e87411;
+    border-bottom: none;
     color: #fff;
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
@@ -123,6 +124,7 @@ svg {
     height: 50px;
     width: 120px;
     border-right: 15px solid #004c6d;
+    border-top: none;
     color: #fff;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;

@@ -56,12 +56,11 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
     .style("color","white");
   
   // Handmade legend
-  svg1.append("rect").attr("x", 795).attr("y",13).attr("width",300).attr("height",95).attr("fill","#353535")
-  svg1.append("rect").attr("x",810).attr("y",52).attr("width",12).attr("height",12).style("fill", "#f5992b")
-  svg1.append("rect").attr("x",810).attr("y",82).attr("width",12).attr("height",12).style("fill", "#00a1c1")
-  svg1.append("text").attr("x", 810).attr("y", 35).text("Critic & Audience Groups").style("font-size", "17px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("font-weight",500)
-  svg1.append("text").attr("x", 830).attr("y", 60).text("Metacritic MetaScore").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-  svg1.append("text").attr("x", 830).attr("y", 90).text("Metacritic User Score").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+  svg1.append("rect").attr("x", 835).attr("y",35).attr("width",230).attr("height",75).attr("fill","#353535")
+  svg1.append("rect").attr("x",850).attr("y",51).attr("width",14).attr("height",14).style("fill", "#f5992b")
+  svg1.append("rect").attr("x",850).attr("y",81).attr("width",14).attr("height",14).style("fill", "#00a1c1")
+  svg1.append("text").attr("x", 870).attr("y", 60).text("Metascore (Critical)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+  svg1.append("text").attr("x", 870).attr("y", 90).text("User Score (Audience)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
 
 
   svg1.append("g")
@@ -241,8 +240,8 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
     svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(839.5,-40)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
     svg.append("text").attr("x", 860).attr("y", -107.5).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     svg.append("text").attr("x", 860).attr("y", -77.5).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg.append("text").attr("x", 860).attr("y", -47).text(`${legend} highest rated`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
-    svg.append("text").attr("x", 860).attr("y", -27).text(`film wins Best Picture`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg.append("text").attr("x", 860).attr("y", -47).text(`${legend} highest rated film`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
+    svg.append("text").attr("x", 860).attr("y", -27).text(`is the Best Picture winner`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     
     
     //Create graphic year rectangles
@@ -427,16 +426,16 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
         //Changing elements of the legend that need changing
         svg.append("circle").attr("cx",840).attr("cy",-77).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
         svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(839.5,-40)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
-        svg.append("text").attr("x", 860).attr("y", -47).text(`${legend} highest rated`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
+        svg.append("text").attr("x", 860).attr("y", -47).text(`${legend} highest rated film`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
         
         svg.selectAll(".title").remove();
         if (group == "MetaScore") {
-            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#303030`).transition().duration(500).style("fill", `${colour}`).attr("class","title").attr("letter-spacing", "3px")
-            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#303030`).attr("class","title")
+            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#343434`).transition().duration(500).style("fill", `${colour}`).attr("class","title").attr("letter-spacing", "3px")
+            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#343434`).attr("class","title")
         }
         if (group == "UserScore") {
-            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#303030`).attr("class","title").attr("letter-spacing", "3px")
-            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#303030`).transition().duration(500).style("fill", `${colour}`).attr("class","title")
+            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#343434`).attr("class","title").attr("letter-spacing", "3px")
+            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#343434`).transition().duration(500).style("fill", `${colour}`).attr("class","title")
     
         }
     
