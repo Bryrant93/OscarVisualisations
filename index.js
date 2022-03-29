@@ -57,7 +57,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
   
   // Handmade legend
   svg1.append("rect").attr("x", 795).attr("y",13).attr("width",300).attr("height",95).attr("fill","#353535")
-  svg1.append("rect").attr("x",810).attr("y",52).attr("width",12).attr("height",12).style("fill", "#e87411")
+  svg1.append("rect").attr("x",810).attr("y",52).attr("width",12).attr("height",12).style("fill", "#f5992b")
   svg1.append("rect").attr("x",810).attr("y",82).attr("width",12).attr("height",12).style("fill", "#00a1c1")
   svg1.append("text").attr("x", 810).attr("y", 35).text("Critic & Audience Groups").style("font-size", "17px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("font-weight",500)
   svg1.append("text").attr("x", 830).attr("y", 60).text("Metacritic MetaScore").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
@@ -80,7 +80,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
   const xSubgroup = d3.scaleBand()
     .domain(subgroups)
     .range([0, x1.bandwidth()])
-    .padding([0.05])
+    .padding([0.0])
 
   // color palette = one color per subgroup
   const color1 = d3.scaleOrdinal()
@@ -227,21 +227,24 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
         .text("Critic/Audience  rating  %");
 
     //Add red-box and red-line
-    svg.append("rect").attr("x", 545).attr("y",-127).attr("width",290).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "2.95,3")
+    svg.append("rect").attr("x", 410).attr("y",-127).attr("width",396).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "2.95,3")
     svg.append("line").attr("x1", 608).attr("y1",-12).attr("x2",608).attr("y2",429.2).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "3,3")
-    svg.append("rect").attr("x", 0).attr("y",-127).attr("width",535).attr("height",115).attr("fill","#383838")
+    // svg.append("rect").attr("x", -15).attr("y",-127).attr("width",410).attr("height",115).attr("fill","#383838")
+    svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${colour}`).attr("class", "title").attr("letter-spacing", "3px")
+    svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", "#343434").attr("class", "title")
 
 
     //Add legend
-    svg.append("rect").attr("x", 844).attr("y",-127).attr("width",334).attr("height",115).attr("fill","#383838")
-    svg.append("circle").attr("cx",860).attr("cy",-107).attr("r", 6).style("fill", "grey")
-    svg.append("circle").attr("cx",860).attr("cy",-77).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
-    svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(860.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
-    svg.append("text").attr("x", 880).attr("y", -107.5).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg.append("text").attr("x", 880).attr("y", -77.5).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg.append("text").attr("x", 880).attr("y", -47).text(`${legend} winner agrees`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
-    svg.append("text").attr("x", 880).attr("y", -27).text(`with Academy winner`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-
+    svg.append("rect").attr("x", 820).attr("y",-127).attr("width",359.5).attr("height",115).attr("fill","#383838")
+    svg.append("circle").attr("cx",840).attr("cy",-107).attr("r", 6).style("fill", "grey")
+    svg.append("circle").attr("cx",840).attr("cy",-77).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
+    svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(839.5,-40)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
+    svg.append("text").attr("x", 860).attr("y", -107.5).text("Best Picture nominee").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg.append("text").attr("x", 860).attr("y", -77.5).text("Best Picture winner").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg.append("text").attr("x", 860).attr("y", -47).text(`${legend} highest rated`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
+    svg.append("text").attr("x", 860).attr("y", -27).text(`film wins Best Picture`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    
+    
     //Create graphic year rectangles
     svg.append('g')
     .selectAll("rect")
@@ -271,7 +274,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
         if (d.Year != currentYear) {
             currentYear = d.Year
             d3.selectAll(".box"+d.Year).style("fill","#474747");
-            //These three variables were once global. Apparently not needed now, but noted still
             selectedYear = d.Year
             filmList = []
             longestFilmTitle = 0
@@ -320,7 +322,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
                 .enter()    
                 .append("rect")
                     .attr("class","filmbox")
-                    .attr("x", selectedYear < 2009 ? (d.Year-1995)*45+7 :(d.Year-1995)*45-(longestFilmTitle + 49))
+                    .attr("x", selectedYear < 2009 ? (d.Year-1995)*45+8.5 :(d.Year-1995)*45-(longestFilmTitle + 50.5))
                     .attr("y",423.5-(20*selectedList.length+1))
                     .attr("width",longestFilmTitle+42)
                     .attr("height", d.Year == 2021 ? 20*selectedList.length+7 : 20*selectedList.length+7)
@@ -347,6 +349,13 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
                         if (k < selectedList.length && selectedList[k][3] == "Winner") {return `${colour}`}
                         else { };
                     })
+            svg.append("g")
+                .selectAll("rect")
+                .data(data)
+                .enter()
+                .append("text")
+                    .attr("class", "filmtext")
+    
         }
         //If the vert-box just clicked is the same year as the last vert-box clicked, the vert-box is deselected
         else {
@@ -416,10 +425,21 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
             })     
 
         //Changing elements of the legend that need changing
-        svg.append("circle").attr("cx",860).attr("cy",-82).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
-        svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(860.5,-42)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend").transition()
-        svg.append("text").attr("x", 880).attr("y", -50).text(`${legend} winner agrees`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
+        svg.append("circle").attr("cx",840).attr("cy",-77).attr("r", 6).style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
+        svg.append("path").attr('d', d3.symbol().type(d3.symbolStar).size(100)).attr("transform", "translate(839.5,-40)").style("fill", `${ghostColour}`).transition().duration(750).style("fill", `${colour}`).attr("class","legend")
+        svg.append("text").attr("x", 860).attr("y", -47).text(`${legend} highest rated`).style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").attr("class","legend")
         
+        svg.selectAll(".title").remove();
+        if (group == "MetaScore") {
+            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#363636`).transition().duration(500).style("fill", `${colour}`).attr("class","title").attr("letter-spacing", "3px")
+            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#363636`).attr("class","title")
+        }
+        if (group == "UserScore") {
+            svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${ghostColour}`).transition().duration(500).style("fill", `#363636`).attr("class","title").attr("letter-spacing", "3px")
+            svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `#363636`).transition().duration(500).style("fill", `${colour}`).attr("class","title")
+    
+        }
+    
         //Changing order of filmtext within the film box depending on changing
         if (filmBoxOpen == true) {
             selectedList = filmList.sort((a, b) => b[metaOrUser] - a[metaOrUser])

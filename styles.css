@@ -6,23 +6,21 @@ body {
     font-size: .95em;
     font-family: "Catamaran";
 }
-text {
-    fill: rgb(233, 239, 241);
-}
+
 
 h1 {
-    color: rgb(255, 179, 37);
+    color: white;
     font-family: Limelight;
     margin-bottom: 0;
 }
 h2 {
-    color: rgb(255, 179, 37);
+    color: white;
     font-family: Limelight;
     margin-bottom: 0;
     font-size: 1.5em;
 }
 h3 {
-    color: rgb(255, 179, 37);
+    color: white;
     font-family: Limelight;
     margin-top: 0;
     margin-bottom: 7px;
@@ -32,6 +30,10 @@ h3 {
 
 svg {
     user-select: none;
+}
+
+.para {
+    margin: 0 5%;
 }
 
 
@@ -72,6 +74,11 @@ svg {
     
 }
 
+.title {
+    font-family: Limelight;
+    font-weight: bolder;
+}
+
 #flexbox {
     margin-top: 3px;
     width: 100%;
@@ -83,19 +90,20 @@ svg {
 
 #flexbox .para{
     margin: 10px;
-    width: 535px;
+    width: 435px;
     order: 1;
 }
 
 #empty {
-    width: 270px;
+    width: 400px;
+    margin-top: 10px;
     margin-left: 10px;
     order: 2;
-    font-size: .85em;
 }
 #button_container {
-    width: 100px;
-    margin-left: 225px;
+    width: 180px;
+    margin-top: 13px;
+    margin-left: 210px;
     z-index: 10;
     order: 3;
 }
@@ -132,17 +140,17 @@ svg {
     #flexbox .para{
         margin-right: 10px;
         font-size: .9em;
-        width: 525px;
+        width: 440px;
         order: 1;
     }
     #empty {
-        width: 280px;
+        width: 390px;
         order: 2;
     }
     #button_container {
-        width: 105px;
+        width: 205px;
         margin-top: 10px;
-        margin-left: 210px;
+        margin-left: 190px;
         z-index: 10;
         order: 3;
     }
