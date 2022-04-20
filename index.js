@@ -193,14 +193,8 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFi
         .attr("y",438)
         .attr("width",25)
         .attr("height", 10)
-        .style("fill","#2e2e2e")
+        .style("fill","#2c2c2c")
     
-    //     For making gridlines. Not needed now probably, but just in case
-    // // https://bl.ocks.org/d3noob/c506ac45617cf9ed39337f99f8511218
-    // // function make_y_gridlines() {		
-    // //     return d3.axisLeft(y).ticks(10)
-    // // }
-
     // Add Y-axis
     const y = d3.scaleLinear()
         .domain([0, 100])

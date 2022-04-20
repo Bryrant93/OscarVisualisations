@@ -118,6 +118,10 @@ svg {
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
     box-shadow: none;
+    font-family: Limelight;
+    font-size: 1.1em;
+    letter-spacing: 1.4px;
+    font-weight: 600;
 }
 #Audience {
     background:#00a1c1;
@@ -129,6 +133,9 @@ svg {
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
     box-shadow: none;
+    font-family: Limelight;
+    font-size: 1.05em;
+    font-weight: 600;
 
 }
 
