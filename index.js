@@ -14,7 +14,7 @@ const svg1 = d3.select("#my_dataviz")
     .attr("transform",`translate(${margin1.left},${margin1.top})`);
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame10.csv").then( function(data1) {
+d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/winnersFrameFinal.csv").then( function(data1) {
   // List of subgroups = header of the csv files = soil condition here
   const subgroups = data1.columns.slice(1)
   // List of groups = species here = value of the first column called group -> I show them on the X axis
@@ -35,24 +35,24 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
     .call(x1)
     .append("text")
     .attr("fill", "white")//set the fill here
-    .text("Decade");
+    .text("Year");
 
 
 
   // Add Y axis
   const y1 = d3.scaleLinear()
-    .domain([0, 10])
+    .domain([0, 5])
     .range([ height1, 0 ]);
     // add the Y gridlines
   svg1.append("g")			
     .attr("class", "grid1")
     .call(d3.axisLeft(y1)
-        .ticks(10)
+        .ticks(5)
         .tickSize(-width1)
         .tickFormat("")
     )
   svg1.append("g")
-    .call(d3.axisLeft(y1).ticks(10))
+    .call(d3.axisLeft(y1).ticks(5))
     .style("color","white");
   
   // Handmade legend
@@ -71,9 +71,9 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/winnersFrame
     .attr("fill", "white")
     .text("No. of years the highest rated film won Best Picture");
   
-    svg1.append("line").attr("x1", 883).attr("y1",392).attr("x2",1060).attr("y2",392).style("stroke", "white").style("stroke-dasharray", "8,4").style("stroke-width", 3).style("opacity",0).transition().duration(1500).style("opacity",1)
-    svg1.append("text").attr("x", 883).attr("y", 367).text("Only two Academy Awards Ceremonies ").style("font-size", "12.5px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").style("opacity",0).transition().duration(1500).style("opacity",1)
-    svg1.append("text").attr("x", 883).attr("y", 382).text("have taken place so far this decade.").style("font-size", "12.5px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").style("opacity",0).transition().duration(1500).style("opacity",1)
+    // svg1.append("line").attr("x1", 883).attr("y1",392).attr("x2",1060).attr("y2",392).style("stroke", "white").style("stroke-dasharray", "8,4").style("stroke-width", 3).style("opacity",0).transition().duration(1500).style("opacity",1)
+    // svg1.append("text").attr("x", 883).attr("y", 367).text("Only two Academy Awards Ceremonies ").style("font-size", "12.5px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").style("opacity",0).transition().duration(1500).style("opacity",1)
+    // svg1.append("text").attr("x", 883).attr("y", 382).text("have taken place so far this decade.").style("font-size", "12.5px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").style("opacity",0).transition().duration(1500).style("opacity",1)
 
   // Another scale for subgroup position?
   const xSubgroup = d3.scaleBand()
@@ -128,7 +128,7 @@ const svg = d3.select("#my_dataviz2")
     .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top+125})`);
     
-d3.csv("https://raw.githubusercontent.com/Bryrant93/DataVisCW2/main/oscarFrameFinal8.csv").then( function(data) { 
+d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/oscarFrameFinal.csv").then( function(data) { 
 
     var highest = "HighestMS"
     var group = "MetaScore"
