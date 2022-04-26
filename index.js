@@ -460,3 +460,53 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
         }   
     }
 })
+
+const margin2 = {top: 10, right: 30, bottom: 20, left: 50},
+    width2 = 1180 - margin2.left - margin1.right,
+    height2 = 520 - margin2.top - margin1.bottom;
+
+// append the svg object to the body of the page
+const svg2 = d3.select("#my_dataviz3")
+  .append("svg")
+    .attr("width", width2 + margin2.left + margin2.right)
+    .attr("height", height2 + 40 + margin2.top + margin2.bottom)
+  .append("g")
+    .attr("transform",`translate(${margin2.left},${margin2.top})`);
+
+// Parse the Data
+d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/winnersFrameFinal.csv", d => {
+    return {
+          date: d3.timeParse("%Y-%m-%d")(d.date),
+          value : d.value
+        }
+      }).then(
+  // Now I can use this dataset:
+  function(data) {
+
+  // Add X axis --> it is a date format
+  const x = d3.scaleTime()
+    .domain(d3.extent(data, d => d.date))
+    .range([ 0, width ]);
+    svg.append("g")
+      .attr("transform", `translate(0,${height})`)
+      .call(d3.axisBottom(x));
+
+  // Add Y axis
+  const y = d3.scaleLinear()
+    .domain([0, d3.max(data, d => +d.value)])
+    .range([ height, 0 ]);
+    svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // Add the area
+  svg.append("path")
+    .datum(data)
+    .attr("fill", "#cce5df")
+    .attr("stroke", "#69b3a2")
+    .attr("stroke-width", 1.5)
+    .attr("d", d3.area()
+      .x(d => x(d.date))
+      .y0(y(0))
+      .y1(d => y(d.value))
+        )
+    })
