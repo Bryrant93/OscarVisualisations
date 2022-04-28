@@ -2,112 +2,94 @@
 
 // set the dimensions and margins of the graph
 const margin1 = {top: 10, right: 30, bottom: 20, left: 50},
-    width1 = 1180 - margin1.left - margin1.right,
+    width1 = 1260 - margin1.left - margin1.right,
     height1 = 520 - margin1.top - margin1.bottom;
 
 // append the svg object to the body of the page
 const svg1 = d3.select("#my_dataviz")
   .append("svg")
     .attr("width", width1 + margin1.left + margin1.right)
-    .attr("height", height1 + 40 + margin1.top + margin1.bottom)
+    .attr("height", height1 +40 + margin1.top + margin1.bottom)
   .append("g")
     .attr("transform",`translate(${margin1.left},${margin1.top})`);
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/winnersFrameFinal.csv").then( function(data1) {
-  // List of subgroups = header of the csv files = soil condition here
-  const subgroups = data1.columns.slice(1)
-  // List of groups = species here = value of the first column called group -> I show them on the X axis
-  const groups = data1.map(d => d.group)
+d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/winnerLine.csv").then(function(data) {
+    
+    // Add X axis 
+    const x1 = d3.scaleLinear()
+      .domain(d3.extent(data, function(d) { return d.year }))
+      .range([ 0, width1 ]);          
 
-  // Add X axis
-  const x1 = d3.scaleBand()
-      .domain(groups)
-      .range([0, width1])
-      .padding([0.2])
-  svg1.append("g")
-    .attr("transform", `translate(0, ${height1})`)
-    .call(d3.axisBottom(x1).tickSize(0))
-    .style("color","#ffffff");
-  svg1.append("g")
-    .attr('class', 'axis1')
-    .attr("transform","translate(525,520)")
-    .call(x1)
-    .append("text")
-    .attr("fill", "white")//set the fill here
-    .text("Year");
+    // Add Y axis
+    const y1 = d3.scaleLinear()
+      .domain([0, 10])
+      .range([ height1, 0 ]);
+    svg1.append("g")			
+      .attr("class", "grid")
+      .call(d3.axisLeft(y1).ticks(10)
+          .tickSize(-width1)
+          .tickFormat("")
+        )
+    
+    // Add the line
+    svg1.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "orange")
+      .attr("stroke-width", 2)
+      .attr("d", d3.line()
+        .x(function(d) { return x1(d.year) })
+        .y(function(d) { return y1(d.Meta) })
+        );
+    svg1.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 2)
+      .attr("d", d3.line()
+        .x(function(d) { return x1(d.year) })
+        .y(function(d) { return y1(d.Critic) })
+        );
+    svg1.append("path")
+      .datum(data.slice(10))
+      .attr("fill", "none")
+      .attr("stroke", "orange")
+      .attr("stroke-width", 2)
+      .attr("d", d3.line()
+        .x(function(d) { return x1(d.year) })
+        .y(function(d) { return y1(d.Meta) })
+        );
 
 
-
-  // Add Y axis
-  const y1 = d3.scaleLinear()
-    .domain([0, 5])
-    .range([ height1, 0 ]);
-    // add the Y gridlines
-  svg1.append("g")			
-    .attr("class", "grid1")
-    .call(d3.axisLeft(y1)
-        .ticks(5)
-        .tickSize(-width1)
-        .tickFormat("")
-    )
-  svg1.append("g")
-    .call(d3.axisLeft(y1).ticks(5))
-    .style("color","white");
-  
-  // Handmade legend
-  svg1.append("rect").attr("x", 835).attr("y",35).attr("width",230).attr("height",75).attr("fill","#353535")
-  svg1.append("rect").attr("x",850).attr("y",51).attr("width",14).attr("height",14).style("fill", "#f5992b")
-  svg1.append("rect").attr("x",850).attr("y",81).attr("width",14).attr("height",14).style("fill", "#00a1c1")
-  svg1.append("text").attr("x", 870).attr("y", 60).text("Metascore (Critical)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-  svg1.append("text").attr("x", 870).attr("y", 90).text("User Score (Audience)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-
-
-  svg1.append("g")
-    .attr('class', 'axis1')
-    .attr("transform","translate(-30,400)rotate(-90)")
-    .call(y1)
-    .append("text")
-    .attr("fill", "white")
-    .text("No. of years the highest rated film won Best Picture");
-  
-    // svg1.append("line").attr("x1", 883).attr("y1",392).attr("x2",1060).attr("y2",392).style("stroke", "white").style("stroke-dasharray", "8,4").style("stroke-width", 3).style("opacity",0).transition().duration(1500).style("opacity",1)
-    // svg1.append("text").attr("x", 883).attr("y", 367).text("Only two Academy Awards Ceremonies ").style("font-size", "12.5px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").style("opacity",0).transition().duration(1500).style("opacity",1)
-    // svg1.append("text").attr("x", 883).attr("y", 382).text("have taken place so far this decade.").style("font-size", "12.5px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5").style("opacity",0).transition().duration(1500).style("opacity",1)
-
-  // Another scale for subgroup position?
-  const xSubgroup = d3.scaleBand()
-    .domain(subgroups)
-    .range([0, x1.bandwidth()])
-    .padding([0.0])
-
-  // color palette = one color per subgroup
-  const color1 = d3.scaleOrdinal()
-    .domain(subgroups)
-    .range(['#f5992b','#00a1c1'])
-        
-  
-  // Show the bars
     svg1.append("g")
-      .selectAll("g")
-      // Enter in data = loop group per group
-      .data(data1)
-      .join("g")
-        .attr("transform", d => `translate(${x1(d.group)}, -.5)`)
-      .selectAll("rect")
-      .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
-      .join("rect")
-        .attr("x", d => xSubgroup(d.key)+4)
-        .attr("y", 490)
-        .attr("width", xSubgroup.bandwidth()*.9)
-        .attr("height", 0)
-        .attr("fill", d => color1(d.key))
-      .transition().duration(1250)
-        .attr("x", d => xSubgroup(d.key)+4)
-        .attr("y", d => y1(d.value))
-        .attr("width", xSubgroup.bandwidth()*.9)
-        .attr("height", d => height1 - y1(d.value))
-        .attr("fill", d => color1(d.key));
+      .attr("transform", `translate(0, ${height1})`)
+      .call(d3.axisBottom(x1).ticks(30).tickFormat(d3.format("d")));
+
+    svg1.append("g")
+        .attr('class', 'axis')
+        .attr("transform","translate(577,525)")
+        .call(x1)
+        .append("text")
+        .attr("fill", "white")
+        .text("Year");
+
+    svg1.append("g")
+      .call(d3.axisLeft(y1));
+
+    svg1.append("g")
+        .attr('class', 'axis')
+        .attr("transform","translate(-30,400)rotate(-90)")
+        .call(y1)
+        .append("text")
+        .attr("fill", "white")
+        .text("No. of years the highest rated film won Best Picture");
+    svg1.append("rect").attr("x", 915).attr("y",380).attr("width",230).attr("height",75).attr("fill","#353535")
+    svg1.append("rect").attr("x",930).attr("y",396).attr("width",14).attr("height",14).style("fill", "#f5992b")
+    svg1.append("rect").attr("x",930).attr("y",426).attr("width",14).attr("height",14).style("fill", "#00a1c1")
+    svg1.append("text").attr("x", 950).attr("y", 405).text("Metascore (Critical)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg1.append("text").attr("x", 950).attr("y", 435).text("User Score (Audience)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+      
 
 })
 
@@ -375,7 +357,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
         //https://bl.ocks.org/d3noob/464c92429ac05c6a19a1
         .style("fill", function(d) {
             if (d.Award == "Winner") {return `${colour}`}
-            else { return "grey" };
+            else {return "grey"};
         })
         .attr("cursor","pointer")
     d3.selectAll(".vertbox").on("click",highlight)
@@ -460,53 +442,3 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
         }   
     }
 })
-
-const margin2 = {top: 10, right: 30, bottom: 20, left: 50},
-    width2 = 1180 - margin2.left - margin1.right,
-    height2 = 520 - margin2.top - margin1.bottom;
-
-// append the svg object to the body of the page
-const svg2 = d3.select("#my_dataviz3")
-  .append("svg")
-    .attr("width", width2 + margin2.left + margin2.right)
-    .attr("height", height2 + 40 + margin2.top + margin2.bottom)
-  .append("g")
-    .attr("transform",`translate(${margin2.left},${margin2.top})`);
-
-// Parse the Data
-d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/winnersFrameFinal.csv", d => {
-    return {
-          date: d3.timeParse("%Y-%m-%d")(d.date),
-          value : d.value
-        }
-      }).then(
-  // Now I can use this dataset:
-  function(data) {
-
-  // Add X axis --> it is a date format
-  const x = d3.scaleTime()
-    .domain(d3.extent(data, d => d.date))
-    .range([ 0, width ]);
-    svg.append("g")
-      .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(x));
-
-  // Add Y axis
-  const y = d3.scaleLinear()
-    .domain([0, d3.max(data, d => +d.value)])
-    .range([ height, 0 ]);
-    svg.append("g")
-      .call(d3.axisLeft(y));
-
-  // Add the area
-  svg.append("path")
-    .datum(data)
-    .attr("fill", "#cce5df")
-    .attr("stroke", "#69b3a2")
-    .attr("stroke-width", 1.5)
-    .attr("d", d3.area()
-      .x(d => x(d.date))
-      .y0(y(0))
-      .y1(d => y(d.value))
-        )
-    })

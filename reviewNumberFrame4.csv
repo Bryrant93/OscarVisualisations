@@ -5,10 +5,10 @@ Ghost,Nominee,1990,71,74,80,52,87,10,5,2,17,21,152,5,178
 The Godfather Part III,Nominee,1990,76,67,62,60,79,5,10,4,19,72,353,24,449
 Goodfellas,Nominee,1990,87,96,97,89,89,1,17,0,18,23,868,36,927
 The Silence of the Lambs,Winner,1991,86,96,95,85,88,2,17,0,19,18,597,13,628
-Beauty and the Beast,Nominee,1991,80,94,92,95,85,5,1,4,22,5,12,6,219
+Beauty and the Beast,Nominee,1991,80,94,92,95,85,5,1,4,10,5,12,6,23
 Bugsy,Nominee,1991,68,85,69,80,72,2,25,0,27,1,7,1,9
 JFK,Nominee,1991,80,84,88,72,84,5,22,2,29,5,72,2,79
-The Prince of Tides,Nominee,1991,67,69,70,65,85,Name:,Name:,Name:,21,Name:,Name:,Name:,8
+The Prince of Tides,Nominee,1991,67,69,70,65,85,Name:,Name:,Name:,0,Name:,Name:,Name:,0
 Unforgiven,Winner,1992,82,96,93,85,83,3,29,1,33,17,195,8,220
 The Crying Game,Nominee,1992,73,94,78,90,77,1,21,0,22,10,52,4,66
 A Few Good Men,Nominee,1992,77,83,89,62,79,6,12,3,21,17,124,2,143
@@ -82,7 +82,7 @@ Munich,Nominee,2005,75,78,83,74,80,9,30,0,39,60,385,39,484
 The Departed,Winner,2006,85,91,94,85,73,3,36,0,39,108,"1,217",308,1633
 Babel,Nominee,2006,74,69,77,69,66,8,30,0,38,100,521,204,825
 Letters from Iwo Jima,Nominee,2006,79,91,86,89,82,3,34,0,37,28,276,23,327
-Little Miss Sunshine,Nominee,2006,78,91,91,80,75,Name:,Name:,Name:,36,Name:,Name:,Name:,685
+Little Miss Sunshine,Nominee,2006,78,91,91,80,75,Name:,Name:,Name:,0,Name:,Name:,Name:,0
 The Queen,Nominee,2006,73,96,76,91,67,0,37,0,37,41,245,78,364
 No Country for Old Men,Winner,2007,81,93,86,91,78,1,35,1,37,182,"1,330",191,1703
 Atonement,Nominee,2007,78,83,80,85,79,3,33,0,36,63,425,53,541
@@ -99,7 +99,7 @@ Avatar,Nominee,2009,78,82,82,83,75,4,31,0,35,479,"2,304",442,3225
 The Blind Side,Nominee,2009,76,66,85,53,74,10,16,3,29,65,267,39,371
 District 9,Nominee,2009,79,90,82,81,81,6,30,0,36,122,"1,191",135,1448
 An Education,Nominee,2009,73,94,80,85,78,2,32,0,34,24,184,12,220
-Inglourious Basterds,Nominee,2009,83,89,88,69,78,Name:,Name:,Name:,36,Name:,Name:,Name:,1750
+Inglourious Basterds,Nominee,2009,83,89,88,69,78,Name:,Name:,Name:,0,Name:,Name:,Name:,0
 Precious: Based on the Novel 'Push' by Sapphire,Nominee,2009,73,92,81,79,80,3,32,1,36,17,178,17,212
 A Serious Man,Nominee,2009,71,90,68,79,68,2,30,3,35,56,188,56,300
 Up,Nominee,2009,82,98,90,88,88,3,34,0,37,69,"1,195",26,1290
@@ -156,7 +156,7 @@ Brooklyn,Nominee,2015,75,97,87,88,79,1,44,0,45,56,330,20,406
 Mad Max: Fury Road,Nominee,2015,81,97,85,90,86,1,50,0,51,206,"3,440",271,3917
 The Martian,Nominee,2015,80,91,91,80,80,6,40,0,46,176,"1,524",88,1788
 The Revenant,Nominee,2015,80,78,84,76,80,5,6,1,12,5,13,2,20
-Room,Nominee,2015,81,93,93,86,83,1,6,1,43,0,3,2,731
+Room,Nominee,2015,81,93,93,86,83,1,6,1,8,0,3,2,5
 Moonlight,Winner,2016,74,98,79,99,72,0,53,0,53,137,"1,053",252,1442
 Arrival,Nominee,2016,79,94,82,81,81,4,47,1,52,142,"1,440",120,1702
 Fences,Nominee,2016,72,92,75,79,73,5,43,0,48,33,189,20,242
@@ -181,23 +181,11 @@ BlacKkKlansman,Nominee,2018,75,96,83,83,74,1,54,1,56,54,366,44,464
 Bohemian Rhapsody,Nominee,2018,79,60,85,49,77,23,17,10,50,164,744,68,976
 The Favourite,Nominee,2018,75,93,69,90,78,1,52,0,53,34,323,40,397
 Roma,Nominee,2018,77,96,72,96,80,0,50,0,50,53,474,54,581
-A Star Is Born,Nominee,2018,76,90,79,59,48,5,4,0,60,8,2,3,1634
+A Star Is Born,Nominee,2018,76,90,79,59,48,5,4,0,9,8,2,3,13
 Vice,Nominee,2018,72,65,60,61,65,14,29,11,54,64,140,39,243
-Parasite,Winner,2019,86,98,90,96,87,Name:,Name:,Name:,52,Name:,Name:,Name:,1709
-1917,Nominee,2019,83,88,88,78,84,Name:,Name:,Name:,57,Name:,Name:,Name:,894
-Ford v Ferrari,Nominee,2019,81,92,98,81,83,Name:,Name:,Name:,47,Name:,Name:,Name:,644
-The Irishman,Nominee,2019,78,96,86,94,81,Name:,Name:,Name:,55,Name:,Name:,Name:,1179
-Jojo Rabbit,Nominee,2019,79,80,94,58,79,Name:,Name:,Name:,57,Name:,Name:,Name:,736
-Joker,Nominee,2019,84,68,88,59,90,15,30,11,56,56,"1,739",65,1860
-Little Women,Nominee,2019,78,95,92,91,75,7,1,3,57,2,1,4,475
-Marriage Story,Nominee,2019,79,94,85,94,84,Name:,Name:,Name:,53,Name:,Name:,Name:,602
-Once Upon a Time in Hollywood,Nominee,2019,76,85,70,84,75,Name:,Name:,Name:,62,Name:,Name:,Name:,1744
-Nomadland,Winner,2020,74,93,82,93,72,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-The Father,Nominee,2020,83,98,92,88,86,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-Judas and the Black Messiah,Nominee,2020,75,97,95,85,74,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-Mank,Nominee,2020,69,83,59,79,63,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-Minari,Nominee,2020,75,98,87,89,80,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-Promising Young Woman,Nominee,2020,75,90,87,73,72,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-Sound of Metal,Nominee,2020,78,97,90,82,79,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-The Trial of the Chicago 7,Nominee,2020,78,89,90,76,75,Name:,Name:,Name:,0,Name:,Name:,Name:,0
-DUMMY,Winner,2021,0,0,0,0,0,Name:,Name:,Name:,0,Name:,Name:,Name:,0
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,

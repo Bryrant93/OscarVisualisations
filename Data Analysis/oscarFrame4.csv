@@ -1,0 +1,303 @@
+Film,Award,Year of Release,IMDB Rating,Tomatometer Rating,Audience Rating,Meta Critic,Meta User
+Patton,Winner,1970,79,94,93,91,84
+Airport,Nominee,1970,66,73,53,42,77
+Five Easy Pieces,Nominee,1970,75,88,84,85,79
+Love Story,Nominee,1970,69,68,75,84,75
+M*A*S*H,Nominee,1970,75,87,83,80,73
+The French Connection,Winner,1971,77,98,87,94,84
+A Clockwork Orange,Nominee,1971,83,88,93,80,80
+Fiddler on the Roof,Nominee,1971,80,83,92,67,84
+The Last Picture Show,Nominee,1971,80,100,90,93,84
+Nicholas and Alexandra,Nominee,1971,72,67,78,-5,-5
+The Godfather,Winner,1972,92,98,98,100,92
+Cabaret,Nominee,1972,78,93,87,80,82
+Deliverance,Nominee,1972,77,89,82,82,77
+The Emigrants,Nominee,1972,80,93,87,-5,-5
+Sounder,Nominee,1972,76,90,77,80,-5
+The Sting,Winner,1973,83,94,95,83,84
+American Graffiti,Nominee,1973,74,96,84,97,81
+Cries and Whispers,Nominee,1973,81,90,91,-5,-5
+The Exorcist,Nominee,1973,80,83,87,81,87
+A Touch of Class,Nominee,1973,65,83,64,-5,-5
+The Godfather Part II,Winner,1974,90,96,97,90,91
+Chinatown,Nominee,1974,82,99,93,92,89
+The Conversation,Nominee,1974,78,96,90,85,85
+Lenny,Nominee,1974,76,88,88,61,74
+The Towering Inferno,Nominee,1974,70,69,72,69,75
+One Flew Over the Cuckoo's Nest,Winner,1975,87,94,96,83,87
+Barry Lyndon,Nominee,1975,81,91,92,89,91
+Dog Day Afternoon,Nominee,1975,80,96,90,86,86
+Jaws,Nominee,1975,80,98,90,87,88
+Nashville,Nominee,1975,77,90,84,96,86
+Rocky,Winner,1976,81,94,69,70,88
+All the President's Men,Nominee,1976,80,94,92,80,83
+Bound for Glory,Nominee,1976,73,83,77,70,-5
+Network,Nominee,1976,81,91,93,83,88
+Taxi Driver,Nominee,1976,82,96,93,94,73
+Annie Hall,Winner,1977,80,98,92,92,81
+The Goodbye Girl,Nominee,1977,74,84,84,64,71
+Julia,Nominee,1977,72,74,70,62,84
+Star Wars,Nominee,1977,86,92,96,90,88
+The Turning Point,Nominee,1977,69,63,67,68,-5
+The Deer Hunter,Winner,1978,81,93,92,86,75
+Coming Home,Nominee,1978,73,85,83,81,72
+Heaven Can Wait,Nominee,1978,69,88,68,72,79
+Midnight Express,Nominee,1978,76,96,89,59,83
+An Unmarried Woman,Nominee,1978,72,90,73,79,-5
+Kramer vs. Kramer,Winner,1979,78,88,89,77,85
+All That Jazz,Nominee,1979,79,87,86,72,79
+Apocalypse Now,Nominee,1979,84,98,94,94,88
+Breaking Away,Nominee,1979,77,95,88,91,88
+Norma Rae,Nominee,1979,73,90,79,61,74
+Ordinary People,Winner,1980,77,89,88,87,65
+Coal Miner's Daughter,Nominee,1980,75,86,86,87,68
+The Elephant Man,Nominee,1980,81,92,93,77,89
+Raging Bull,Nominee,1980,82,93,93,89,69
+Tess,Nominee,1980,73,81,78,82,89
+Chariots of Fire,Winner,1981,72,82,80,78,69
+Atlantic City,Nominee,1981,73,100,77,85,70
+On Golden Pond,Nominee,1981,76,93,87,68,74
+Raiders of the Lost Ark,Nominee,1981,84,95,96,85,89
+Reds,Nominee,1981,76,90,82,76,58
+Gandhi,Winner,1982,80,85,92,79,85
+E.T. the Extra-Terrestrial,Nominee,1982,78,99,72,91,82
+Missing,Nominee,1982,77,94,85,78,76
+Tootsie,Nominee,1982,74,90,81,88,80
+The Verdict,Nominee,1982,77,88,88,77,81
+Terms of Endearment,Winner,1983,74,78,83,79,76
+The Big Chill,Nominee,1983,72,68,77,61,76
+The Dresser,Nominee,1983,76,100,87,-5,-5
+The Right Stuff,Nominee,1983,78,96,90,91,83
+Tender Mercies,Nominee,1983,74,84,82,76,-5
+Amadeus,Winner,1984,83,93,95,88,83
+The Killing Fields,Nominee,1984,78,93,92,76,73
+A Passage to India,Nominee,1984,73,76,78,78,-5
+Places in the Heart,Nominee,1984,74,89,83,70,81
+A Soldier's Story,Nominee,1984,72,90,81,66,-5
+Out of Africa,Winner,1985,72,59,83,69,69
+The Color Purple,Nominee,1985,78,81,94,78,78
+Kiss of the Spider Woman,Nominee,1985,74,87,81,80,82
+Prizzi's Honor,Nominee,1985,67,85,62,84,63
+Witness,Nominee,1985,74,93,80,76,84
+Platoon,Winner,1986,81,88,93,92,81
+Children of a Lesser God,Nominee,1986,72,82,79,80,78
+Hannah and Her Sisters,Nominee,1986,79,91,90,90,81
+The Mission,Nominee,1986,74,64,87,55,86
+A Room with a View,Nominee,1986,73,100,85,80,82
+The Last Emperor,Winner,1987,77,89,88,76,82
+Broadcast News,Nominee,1987,72,98,79,84,76
+Fatal Attraction,Nominee,1987,69,76,72,67,86
+Hope and Glory,Nominee,1987,73,95,82,86,85
+Moonstruck,Nominee,1987,71,93,81,83,85
+Rain Man,Winner,1988,80,89,90,65,85
+The Accidental Tourist,Nominee,1988,68,81,60,53,80
+Dangerous Liaisons,Nominee,1988,76,93,83,74,77
+Mississippi Burning,Nominee,1988,78,84,90,65,85
+Working Girl,Nominee,1988,68,84,67,73,83
+Driving Miss Daisy,Winner,1989,74,82,81,81,84
+Born on the Fourth of July,Nominee,1989,72,85,76,75,76
+Dead Poets Society,Nominee,1989,81,84,92,79,82
+Field of Dreams,Nominee,1989,75,87,86,57,87
+My Left Foot,Nominee,1989,79,98,92,97,85
+Dances with Wolves,Winner,1990,80,83,87,72,86
+Awakenings,Nominee,1990,78,88,89,74,86
+Ghost,Nominee,1990,71,74,80,52,87
+The Godfather Part III,Nominee,1990,76,67,62,60,79
+Goodfellas,Nominee,1990,87,96,97,89,89
+The Silence of the Lambs,Winner,1991,86,96,95,85,88
+Beauty and the Beast,Nominee,1991,80,94,92,95,85
+Bugsy,Nominee,1991,68,85,69,80,72
+JFK,Nominee,1991,80,84,88,72,84
+The Prince of Tides,Nominee,1991,67,69,70,65,85
+Unforgiven,Winner,1992,82,96,93,85,83
+The Crying Game,Nominee,1992,73,94,78,90,77
+A Few Good Men,Nominee,1992,77,83,89,62,79
+Howards End,Nominee,1992,74,94,82,89,84
+Scent of a Woman,Nominee,1992,80,89,92,59,87
+Schindler's List,Winner,1993,89,97,97,94,87
+The Fugitive,Nominee,1993,78,96,89,87,88
+In the Name of the Father,Nominee,1993,81,94,95,84,81
+The Piano,Nominee,1993,76,92,86,89,80
+The Remains of the Day,Nominee,1993,78,95,89,84,84
+Forrest Gump,Winner,1994,88,71,95,82,77
+Four Weddings and a Funeral,Nominee,1994,71,96,74,81,81
+Pulp Fiction,Nominee,1994,89,92,96,94,91
+Quiz Show,Nominee,1994,75,96,87,88,85
+The Shawshank Redemption,Nominee,1994,93,91,98,80,89
+Braveheart,Winner,1995,83,78,85,68,87
+Apollo 13,Nominee,1995,76,96,87,77,80
+Babe,Nominee,1995,68,97,67,83,78
+The Postman (Il Postino),Nominee,1995,77,94,94,81,82
+Sense and Sensibility,Nominee,1995,77,97,90,84,83
+The English Patient,Winner,1996,74,85,83,87,74
+Fargo,Nominee,1996,81,94,93,85,87
+Jerry Maguire,Nominee,1996,73,84,79,77,85
+Secrets & Lies,Nominee,1996,80,95,91,91,83
+Shine,Nominee,1996,77,91,90,87,83
+Titanic,Winner,1997,78,89,69,75,85
+As Good as It Gets,Nominee,1997,77,85,86,67,87
+The Full Monty,Nominee,1997,72,96,79,75,78
+Good Will Hunting,Nominee,1997,83,97,94,70,88
+L.A. Confidential,Nominee,1997,82,99,94,90,89
+Shakespeare in Love,Winner,1998,71,92,80,87,72
+Elizabeth,Nominee,1998,74,82,86,75,75
+Life Is Beautiful,Nominee,1998,86,80,96,59,77
+Saving Private Ryan,Nominee,1998,86,93,95,91,89
+The Thin Red Line,Nominee,1998,76,80,80,78,82
+American Beauty,Winner,1999,83,87,93,86,89
+The Cider House Rules,Nominee,1999,74,71,77,75,88
+The Green Mile,Nominee,1999,86,78,94,61,84
+The Insider,Nominee,1999,78,96,90,84,87
+The Sixth Sense,Nominee,1999,81,86,90,64,89
+Gladiator,Winner,2000,85,77,87,67,89
+Chocolat,Nominee,2000,72,62,83,64,73
+"Crouching Tiger, Hidden Dragon",Nominee,2000,78,97,86,93,81
+Erin Brockovich,Nominee,2000,74,84,81,73,83
+Traffic,Nominee,2000,76,93,85,86,88
+A Beautiful Mind,Winner,2001,82,74,93,72,81
+Gosford Park,Nominee,2001,72,86,78,90,74
+In the Bedroom,Nominee,2001,74,93,81,86,74
+The Lord of the Rings: The Fellowship of the Ring,Nominee,2001,88,91,95,92,91
+Moulin Rouge!,Nominee,2001,76,76,89,66,85
+Chicago,Winner,2002,72,86,83,82,80
+Gangs of New York,Nominee,2002,75,73,81,72,77
+The Hours,Nominee,2002,75,80,84,80,87
+The Lord of the Rings: The Two Towers,Nominee,2002,87,95,95,87,90
+The Pianist,Nominee,2002,85,95,96,85,78
+The Lord of the Rings: The Return of the King,Winner,2003,89,93,86,94,91
+Lost in Translation,Nominee,2003,77,95,85,89,75
+Master and Commander: The Far Side of the World,Nominee,2003,74,85,80,81,64
+Mystic River,Nominee,2003,79,88,89,84,70
+Seabiscuit,Nominee,2003,73,78,76,72,73
+Million Dollar Baby,Winner,2004,81,91,90,86,75
+The Aviator,Nominee,2004,75,86,79,77,86
+Finding Neverland,Nominee,2004,77,83,87,67,79
+Ray,Nominee,2004,77,80,87,73,87
+Sideways,Nominee,2004,75,97,79,94,71
+Crash,Winner,2005,77,74,88,66,85
+Brokeback Mountain,Nominee,2005,77,87,82,87,83
+Capote,Nominee,2005,73,90,82,88,78
+"Good Night, and Good Luck",Nominee,2005,74,93,83,80,73
+Munich,Nominee,2005,75,78,83,74,80
+The Departed,Winner,2006,85,91,94,85,73
+Babel,Nominee,2006,74,69,77,69,66
+Letters from Iwo Jima,Nominee,2006,79,91,86,89,82
+Little Miss Sunshine,Nominee,2006,78,91,91,80,75
+The Queen,Nominee,2006,73,96,76,91,67
+No Country for Old Men,Winner,2007,81,93,86,91,78
+Atonement,Nominee,2007,78,83,80,85,79
+Juno,Nominee,2007,74,94,88,81,83
+Michael Clayton,Nominee,2007,72,91,69,82,77
+There Will Be Blood,Nominee,2007,82,92,86,93,81
+Slumdog Millionaire,Winner,2008,80,91,90,86,78
+The Curious Case of Benjamin Button,Nominee,2008,78,72,80,70,73
+Frost/Nixon,Nominee,2008,77,93,88,80,78
+Milk,Nominee,2008,75,93,89,84,76
+The Reader,Nominee,2008,76,63,79,58,72
+The Hurt Locker,Winner,2009,75,97,84,95,73
+Avatar,Nominee,2009,78,82,82,83,75
+The Blind Side,Nominee,2009,76,66,85,53,74
+District 9,Nominee,2009,79,90,82,81,81
+An Education,Nominee,2009,73,94,80,85,78
+Inglourious Basterds,Nominee,2009,83,89,88,69,78
+Precious: Based on the Novel 'Push' by Sapphire,Nominee,2009,73,92,81,79,80
+A Serious Man,Nominee,2009,71,90,68,79,68
+Up,Nominee,2009,82,98,90,88,88
+Up in the Air,Nominee,2009,74,91,79,83,74
+The King's Speech,Winner,2010,80,94,92,88,83
+127 Hours,Nominee,2010,75,93,85,82,81
+Black Swan,Nominee,2010,80,85,84,79,81
+The Fighter,Nominee,2010,78,90,89,79,81
+Inception,Nominee,2010,88,87,91,74,88
+The Kids Are All Right,Nominee,2010,70,92,74,86,72
+The Social Network,Nominee,2010,77,96,86,95,82
+Toy Story 3,Nominee,2010,82,98,89,92,89
+True Grit,Nominee,2010,76,96,85,80,78
+Winter's Bone,Nominee,2010,72,94,76,90,73
+The Artist,Winner,2011,79,95,87,89,82
+The Descendants,Nominee,2011,73,88,79,84,77
+Extremely Loud & Incredibly Close,Nominee,2011,69,45,61,46,58
+The Help,Nominee,2011,80,76,89,62,79
+Hugo,Nominee,2011,75,93,78,83,77
+Midnight in Paris,Nominee,2011,77,93,83,81,80
+Moneyball,Nominee,2011,76,94,86,87,80
+The Tree of Life,Nominee,2011,68,85,60,85,70
+War Horse,Nominee,2011,72,75,74,72,67
+Argo,Winner,2012,77,96,90,86,77
+Amour,Nominee,2012,79,93,82,94,81
+Beasts of the Southern Wild,Nominee,2012,73,87,76,86,75
+Django Unchained,Nominee,2012,84,87,91,81,86
+Life of Pi,Nominee,2012,79,87,84,79,79
+Lincoln,Nominee,2012,73,89,81,86,75
+Les Misérables,Nominee,2012,76,69,79,63,75
+Silver Linings Playbook,Nominee,2012,77,92,86,81,86
+Zero Dark Thirty,Nominee,2012,74,91,80,95,69
+12 Years a Slave,Winner,2013,81,95,90,96,81
+American Hustle,Nominee,2013,72,92,74,90,73
+Captain Phillips,Nominee,2013,78,93,89,83,81
+Dallas Buyers Club,Nominee,2013,80,93,91,84,82
+Gravity,Nominee,2013,77,96,80,96,78
+Her,Nominee,2013,80,95,82,90,86
+Nebraska,Nominee,2013,77,91,83,86,80
+Philomena,Nominee,2013,76,90,89,77,79
+The Wolf of Wall Street,Nominee,2013,82,80,83,75,68
+Birdman or (The Unexpected Virtue of Ignorance),Winner,2014,77,91,78,87,82
+American Sniper,Nominee,2014,73,72,84,72,66
+Boyhood,Nominee,2014,79,97,81,100,77
+The Grand Budapest Hotel,Nominee,2014,81,91,86,88,84
+The Imitation Game,Nominee,2014,80,89,91,73,81
+Selma,Nominee,2014,75,99,86,88,72
+The Theory of Everything,Nominee,2014,77,80,84,72,78
+Whiplash,Nominee,2014,85,94,94,88,89
+Spotlight,Winner,2015,81,97,93,93,81
+The Big Short,Nominee,2015,78,88,88,81,82
+Bridge of Spies,Nominee,2015,76,90,87,81,76
+Brooklyn,Nominee,2015,75,97,87,88,79
+Mad Max: Fury Road,Nominee,2015,81,97,85,90,86
+The Martian,Nominee,2015,80,91,91,80,80
+The Revenant,Nominee,2015,80,78,84,76,80
+Room,Nominee,2015,81,93,93,86,83
+Moonlight,Winner,2016,74,98,79,99,72
+Arrival,Nominee,2016,79,94,82,81,81
+Fences,Nominee,2016,72,92,75,79,73
+Hacksaw Ridge,Nominee,2016,81,84,91,71,83
+Hell or High Water,Nominee,2016,76,97,88,88,81
+Hidden Figures,Nominee,2016,78,93,93,74,74
+La La Land,Nominee,2016,80,91,81,93,84
+Lion,Nominee,2016,80,84,91,69,78
+Manchester by the Sea,Nominee,2016,78,96,78,96,82
+The Shape of Water,Winner,2017,73,92,72,87,70
+Call Me by Your Name,Nominee,2017,79,94,86,93,79
+Darkest Hour,Nominee,2017,74,84,82,75,73
+Dunkirk,Nominee,2017,78,92,81,94,83
+Get Out,Nominee,2017,77,98,86,84,74
+Lady Bird,Nominee,2017,74,99,79,94,76
+Phantom Thread,Nominee,2017,75,91,71,90,76
+The Post,Nominee,2017,72,88,73,83,70
+"Three Billboards Outside Ebbing, Missouri",Nominee,2017,81,90,87,88,77
+Green Book,Winner,2018,82,77,91,69,79
+Black Panther,Nominee,2018,73,96,79,88,64
+BlacKkKlansman,Nominee,2018,75,96,83,83,74
+Bohemian Rhapsody,Nominee,2018,79,60,85,49,77
+The Favourite,Nominee,2018,75,93,69,90,78
+Roma,Nominee,2018,77,96,72,96,80
+A Star Is Born,Nominee,2018,76,90,79,59,48
+Vice,Nominee,2018,72,65,60,61,65
+Parasite,Winner,2019,86,98,90,96,87
+1917,Nominee,2019,83,88,88,78,84
+Ford v Ferrari,Nominee,2019,81,92,98,81,83
+The Irishman,Nominee,2019,78,96,86,94,81
+Jojo Rabbit,Nominee,2019,79,80,94,58,79
+Joker,Nominee,2019,84,68,88,59,90
+Little Women,Nominee,2019,78,95,92,91,75
+Marriage Story,Nominee,2019,79,94,85,94,84
+Once Upon a Time in Hollywood,Nominee,2019,76,85,70,84,75
+Nomadland,Winner,2020,74,93,82,93,72
+The Father,Nominee,2020,83,98,92,88,86
+Judas and the Black Messiah,Nominee,2020,75,97,95,85,74
+Mank,Nominee,2020,69,83,59,79,63
+Minari,Nominee,2020,75,98,87,89,80
+Promising Young Woman,Nominee,2020,75,90,87,73,72
+Sound of Metal,Nominee,2020,78,97,90,82,79
+The Trial of the Chicago 7,Nominee,2020,78,89,90,76,75
+DUMMY,Winner,2021,0,0,0,0,0
