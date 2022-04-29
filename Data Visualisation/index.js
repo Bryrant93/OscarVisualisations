@@ -130,7 +130,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
         .style("font-size", "15px")
         .attr("font-weight",450)
         .style("opacity", 0)
-        .attr("fill","white")
+        .attr("fill","#F5FAFD")
         .attr("text-anchor", "left")
         .attr("alignment-baseline", "middle")
 
@@ -175,7 +175,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
         console.log("critic",selectedData.Critic)
         console.log("user",selectedData.User)
 
-        filmWidth = getWidth(selectedData.Winner, 16, Catamaran)*1.45
+        filmWidth = getWidth(selectedData.year + ": " +selectedData.Winner, 16, Catamaran)*1.45
         focusCritic
         .attr("x1",x1(selectedData.year))
         .attr("y1", selectedData.Critic>selectedData.User ? y1(selectedData.Critic)+1: yCoord/2)
@@ -189,11 +189,11 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
         .attr("y2", selectedData.User>selectedData.Critic ? y1(selectedData.User)+1: yCoord/2)
         .attr("stroke", selectedData.Uwin == 1 ? "#00a1c1" : "#474747")
         focusFilm
-            .html(selectedData.Winner)
-            .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+7 : selectedData.year > 2020 ? x1(selectedData.year)-filmWidth+2: x1(selectedData.year)-filmWidth*.46)
-            .attr("y", selectedData.year < 1999 ? yCoord/2-13.5: yCoord/2)
+            .html(selectedData.year + ": " +selectedData.Winner)
+            .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+7 : selectedData.year > 2019 ? width1-filmWidth+2: x1(selectedData.year)-filmWidth*.46)
+            .attr("y", selectedData.year < 1999 ? yCoord/2-13.5: yCoord/2+1.5)
         focusBox
-            .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+2 : selectedData.year > 2020 ? x1(selectedData.year)-filmWidth : x1(selectedData.year)-filmWidth*.5)
+            .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+2 : selectedData.year > 2019 ? width1-filmWidth : x1(selectedData.year)-filmWidth*.5)
             .attr("y", selectedData.year < 1999 ? yCoord/2-29: yCoord/2-13.5)
             .attr("width", filmWidth)
             .attr("height", 27)
@@ -203,16 +203,16 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
             .attr("stroke-linejoin","round")
         focusMwin
         .style("opacity", selectedData.Mwin == 1 ? 1 : 0)
-            .attr("x1",(x1(selectedData.year)-filmWidth*.5-.9))
-            .attr("y1", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
-            .attr("x2",(x1(selectedData.year)+filmWidth*.5+.9))
-            .attr("y2", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
+            .attr("x1", selectedData.year > 2019 ? width1-filmWidth-1 : x1(selectedData.year)-filmWidth*.5-.9)
+            .attr("y1", parseInt(selectedData.Critic)>=parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
+            .attr("x2", selectedData.year > 2019 ? width1+1 : x1(selectedData.year)+filmWidth*.5+.9)
+            .attr("y2", parseInt(selectedData.Critic)>=parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
             .attr("stroke", "#f5992b")
         focusUwin
         .style("opacity", selectedData.Uwin == 1 ? 1 : 0)
-        .attr("x1",(x1(selectedData.year)-filmWidth*.5-.9))
+        .attr("x1", x1(selectedData.year)-filmWidth*.5-.9)
         .attr("y1", parseInt(selectedData.User)>parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
-        .attr("x2",(x1(selectedData.year)+filmWidth*.5+.9))
+        .attr("x2", x1(selectedData.year)+filmWidth*.5+.9)
         .attr("y2", parseInt(selectedData.User)>parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
         .attr("stroke", "#00a1c1")
     }

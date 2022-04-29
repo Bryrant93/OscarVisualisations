@@ -2,8 +2,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-reviewFrame = pd.read_csv("reviewNumberFrame4.csv")
-reviewFrameCut = pd.read_csv("reviewNumberFrame3.csv")
+reviewFrame = pd.read_csv("reviewNumberFrame1990.csv")
+reviewFrameCut = pd.read_csv("reviewNumberFrame1996.csv")
 MCcritic = pd.read_csv("oscarFrameFinal.csv")
 winnerFrame = MCcritic[MCcritic.Award == 'Winner']
 
