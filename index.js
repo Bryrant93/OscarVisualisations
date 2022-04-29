@@ -214,8 +214,8 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
             .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+7 : selectedData.year > 2019 ? width1-filmWidth+2: x1(selectedData.year)-filmWidth*.46)
             .attr("y", selectedData.year < 1999 ? yCoord/2-13.5: yCoord/2+1.5)
         focusBox
-            .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+2 : selectedData.year > 2019 ? width1-filmWidth : x1(selectedData.year)-filmWidth*.5)
-            .attr("y", selectedData.year < 1999 ? yCoord/2-29: yCoord/2-13.5)
+            .attr("x", selectedData.year < 1997 ? 1.5 : selectedData.year > 2019 ? width1-filmWidth : x1(selectedData.year)-filmWidth*.5)
+            .attr("y", selectedData.year < 1999 ? yCoord/2-27.3: yCoord/2-13.5)
             .attr("width", filmWidth)
             .attr("height", 27)
             .attr("fill","#383838")
