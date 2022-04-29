@@ -32,6 +32,44 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
           .tickFormat("")
         )
     
+    // Code to add tracking info
+    // var bisectX = d3.bisector(function(d) {console.log(d.x);return d.x;}).left;
+    // var bisectY = d3.bisector(function(d) {return y1(d.Critic);}).left;
+
+    // var focus = svg1
+    //     .append("g")
+    //     .append("circle")
+    //         .style("fill", "none")
+    //         .attr("stroke", "black")
+    //         .attr('r', 8.5)
+    //         .style("opacity", 0)
+
+    // svg1
+    //     .append('rect')
+    //     .style("fill", "none")
+    //     .style("pointer-events", "all")
+    //     .attr('width', width)
+    //     .attr('height', height)
+    //     .on('mouseover', mouseover)
+    //     .on("mousemove", e => console.log(d3.pointer(e)) )        
+    //     .on('mouseout', mouseout);
+
+    // function mouseover() {
+    //     focus.style("opacity", 1)
+    // }
+
+    // function mousemove() {
+    //     // var x0 = x1.invert(d3.pointer(e)[0]);
+    //     e => console.log(d3.pointer(e))
+    //     // var i = bisectX(data, x0, 1);
+    //     // selectedData = data[i]
+    //     // focus
+    //     //     .attr("cx", x1(selectedData.x))
+    //     //     .attr("cy", y1(selectedData.y))
+    // }
+    // function mouseout() {
+    //     focus.style("opacity", 0)
+    // }
     // Add the line
     svg1.append("path")
       .datum(data)
@@ -40,25 +78,25 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
       .attr("stroke-width", 2)
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
-        .y(function(d) { return y1(d.Meta) })
+        .y(function(d) { return y1(d.Critic) })
         );
     svg1.append("path")
-      .datum(data)
+      .datum(data.slice(3))
       .attr("fill", "none")
       .attr("stroke", "steelblue")
       .attr("stroke-width", 2)
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
-        .y(function(d) { return y1(d.Critic) })
+        .y(function(d) { return y1(d.User) })
         );
     svg1.append("path")
-      .datum(data.slice(10))
+      .datum(data.slice(4))
       .attr("fill", "none")
       .attr("stroke", "orange")
       .attr("stroke-width", 2)
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
-        .y(function(d) { return y1(d.Meta) })
+        .y(function(d) { return y1(d.Critic) })
         );
 
 
@@ -90,7 +128,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
     svg1.append("text").attr("x", 950).attr("y", 405).text("Metascore (Critical)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     svg1.append("text").attr("x", 950).attr("y", 435).text("User Score (Audience)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
       
-
+    //https://d3-graph-gallery.com/graph/line_cursor.html implementing the cursor info
 })
 
 
