@@ -29,7 +29,7 @@ const svg1 = d3.select("#my_dataviz")
     .attr("transform",`translate(${margin1.left},${margin1.top})`);
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/winnerLine.csv").then(function(data) {
+d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Data%20Analysis/winnerLine.csv").then(function(data) {
     
     // Add X axis 
     const x1 = d3.scaleLinear()
@@ -99,12 +99,33 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
         .append("text")
         .attr("fill", "white")
         .text("No. of years the highest rated film won Best Picture");
-    svg1.append("rect").attr("x", 915).attr("y",380).attr("width",230).attr("height",75).attr("fill","#353535")
-    svg1.append("rect").attr("x",930).attr("y",396).attr("width",14).attr("height",14).style("fill", "#f5992b")
-    svg1.append("rect").attr("x",930).attr("y",426).attr("width",14).attr("height",14).style("fill", "#00a1c1")
-    svg1.append("text").attr("x", 950).attr("y", 405).text("Metascore (Critical)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg1.append("text").attr("x", 950).attr("y", 435).text("User Score (Audience)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-     
+
+    svg1.append("rect").attr("x", 815).attr("y",320).attr("width",350).attr("height",135).attr("fill","#353535")
+
+    svg1.append("rect").attr("x",847).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#f5992b")
+    svg1.append("rect").attr("x",982).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#00a1c1")
+    svg1.append("text").attr("x", 862).attr("y", 440).text("Metascore (Critical)").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg1.append("text").attr("x",997).attr("y", 440).text("User Score (Audience)").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    
+
+    svg1.append("line").attr("stroke-width", 3).attr("x1",825).attr("y1", 341.5).attr("x2",995).attr("y2",341.5).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 341.5).attr("x2",910).attr("y2",330).attr("stroke", "#f5992b")
+    svg1.append("rect").attr("x", 825).attr("y", 361.5).attr("width", 170).attr("height", 27).attr("fill","#383838").attr("stroke", "#474747").attr("stroke-width", 2).attr("stroke-linejoin","round")
+    svg1.append('text').attr("x", 833).attr("y",375).text("2008: Slumdog Millionaire").style("font-size", "15px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",825).attr("y1", 408.5).attr("x2",995).attr("y2",408.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 408.5).attr("x2",910).attr("y2",420).attr("stroke", "#00a1c1")
+
+
+    svg1.append('text').attr("x", 1003).attr("y",331).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 1003).attr("y",344).text("highest rated critical film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+
+    svg1.append('text').attr("x", 1003).attr("y",370).text("The Best Picture winner").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 1003).attr("y",383).text("for the selected year.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+
+    svg1.append('text').attr("x", 1003).attr("y",406).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 1003).attr("y",419).text("highest rated audience film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+
+
     var focusCritic = svg1
     .append("g")
     .append("line")
@@ -245,7 +266,7 @@ const svg = d3.select("#my_dataviz2")
     .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top+125})`);
     
-d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/oscarFrameFinal.csv").then( function(data) { 
+d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Data%20Analysis/oscarFrameFinal.csv").then( function(data) { 
 
     var highest = "HighestMS"
     var group = "MetaScore"

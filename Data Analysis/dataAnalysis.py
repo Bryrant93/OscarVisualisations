@@ -10,7 +10,7 @@ winnerFrame = MCcritic[MCcritic.Award == 'Winner']
 print("As the data I have chosen covers a large time period, and the further back you went the more incomplete the data became I had to decide on the period which had the most accurate and truthful data.")
 print("The following two histograms display the distribution of films from 1990-2018 by the number of reviews they received.")
 print("Each bin in the critic reviews is approximately 20, while each bin in the user reviews in approximately 60.")
-print("Please note the user review histogram has been dramatically truncated, as the second half of the chart was sparsely populated. I have included this seperately.")
+print("Please note the user review histogram has been dramatically truncated, as the second half of the chart was sparsely populated. I have included this separately.")
 plt.hist(reviewFrame["Meta"],25)
 plt.title("Number of critical reviews recieved by Best Picture Nominees 1990-2018")
 plt.show()
@@ -33,7 +33,7 @@ plt.title("Number of user reviews recieved by Best Picture Nominees 1990-2018")
 plt.ylim(ymin=0,ymax=2000)
 plt.show()
 print("In the scatter graphs above I noticed that there was a change in 1996 for Critic reviews, as the films in that period stopped averaging fewer than 20 reviews and jumped up to high 20s and only rose from there.")
-print("There was not as noticable a trend for user reviews, but when displayed on the histogram below (1996-2018) it became apparant that there were approximately only 7 films in the period 1996-2018 that had 60 or fewer reviews. As in the entire dataset there was no film with a number of critical reviews higher than 60 I decided this was an acceptable period of time to explore.")
+print("There was not as noticeable a trend for user reviews, but when displayed on the histogram below (1996-2018) it became apparent that there were approximately only 7 films in the period 1996-2018 that had 60 or fewer reviews. As in the entire dataset there was no film with a number of critical reviews higher than 60 I decided this was an acceptable period of time to explore.")
 plt.hist(reviewFrameCut["Meta"],25)
 plt.title("Number of critical reviews recieved by Best Picture Nominees 1996-2018")
 plt.show()
@@ -61,8 +61,6 @@ plt.title("User ratings of Best Picture nominees between 1996-2021, winner displ
 plt.ylim(ymin=0,ymax=100)
 plt.show()
 print(" ")
-
-
 
 ## Press Run Above to see the two main bits of data analysis I did for this project.
 #%%
