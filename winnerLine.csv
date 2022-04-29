@@ -1,13 +1,13 @@
 ﻿year,Critic,User,Winner,Mwin,Uwin
 1996,0.025,0.025,The English Patient,0,0
 1997,0.025,0.025,Titanic,0,0
-1998,0.025,0.025,Shakespear in Love,0,0
-1999,1,1,American Beauty,0,0
+1998,0.025,0.025,Shakespeare in Love,0,0
+1999,1,1,American Beauty,1,1
 2000,1,2,Gladiator,0,1
 2001,1,2,A Beautiful Mind,0,0
 2002,1,2,Chicago,0,0
 2003,2,3,The Lord of the Rings: The Return of the King,1,1
-2004,2,3,Million Dollar Baby,0,1
+2004,2,3,Million Dollar Baby,0,0
 2005,2,4,Crash,0,1
 2006,2,4,The Departed,0,0
 2007,2,4,No Country for Old Men,0,0

@@ -1,5 +1,20 @@
 //https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html
 
+//https://stackoverflow.com/questions/29031659/calculate-width-of-text-before-drawing-the-text
+//https://stackoverflow.com/questions/40199805/unable-to-use-a-google-font-on-canvas
+// Function to find pixel length of film titles. Used in both visualisations
+let Catamaran = new FontFace(
+    "Catamaran",
+    "url(https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap)"
+    );
+    function getWidth(text, fontSize, fontFace) {
+        var canvas = document.createElement('canvas'),
+        context = canvas.getContext('2d');
+        context.font = fontSize + 'px ' + fontFace;
+        return context.measureText(text).width;
+    }
+
+
 // set the dimensions and margins of the graph
 const margin1 = {top: 10, right: 30, bottom: 20, left: 50},
     width1 = 1260 - margin1.left - margin1.right,
@@ -32,58 +47,20 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
           .tickFormat("")
         )
     
-    // Code to add tracking info
-    // var bisectX = d3.bisector(function(d) {console.log(d.x);return d.x;}).left;
-    // var bisectY = d3.bisector(function(d) {return y1(d.Critic);}).left;
-
-    // var focus = svg1
-    //     .append("g")
-    //     .append("circle")
-    //         .style("fill", "none")
-    //         .attr("stroke", "black")
-    //         .attr('r', 8.5)
-    //         .style("opacity", 0)
-
-    // svg1
-    //     .append('rect')
-    //     .style("fill", "none")
-    //     .style("pointer-events", "all")
-    //     .attr('width', width)
-    //     .attr('height', height)
-    //     .on('mouseover', mouseover)
-    //     .on("mousemove", e => console.log(d3.pointer(e)) )        
-    //     .on('mouseout', mouseout);
-
-    // function mouseover() {
-    //     focus.style("opacity", 1)
-    // }
-
-    // function mousemove() {
-    //     // var x0 = x1.invert(d3.pointer(e)[0]);
-    //     e => console.log(d3.pointer(e))
-    //     // var i = bisectX(data, x0, 1);
-    //     // selectedData = data[i]
-    //     // focus
-    //     //     .attr("cx", x1(selectedData.x))
-    //     //     .attr("cy", y1(selectedData.y))
-    // }
-    // function mouseout() {
-    //     focus.style("opacity", 0)
-    // }
     // Add the line
     svg1.append("path")
       .datum(data)
       .attr("fill", "none")
-      .attr("stroke", "orange")
+      .attr("stroke", "#f5992b")
       .attr("stroke-width", 2)
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
         .y(function(d) { return y1(d.Critic) })
         );
     svg1.append("path")
-      .datum(data.slice(3))
+      .datum(data)
       .attr("fill", "none")
-      .attr("stroke", "steelblue")
+      .attr("stroke", "#00a1c1")
       .attr("stroke-width", 2)
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
@@ -92,7 +69,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
     svg1.append("path")
       .datum(data.slice(4))
       .attr("fill", "none")
-      .attr("stroke", "orange")
+      .attr("stroke", "#f5992b")
       .attr("stroke-width", 2)
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
@@ -127,7 +104,127 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/win
     svg1.append("rect").attr("x",930).attr("y",426).attr("width",14).attr("height",14).style("fill", "#00a1c1")
     svg1.append("text").attr("x", 950).attr("y", 405).text("Metascore (Critical)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     svg1.append("text").attr("x", 950).attr("y", 435).text("User Score (Audience)").style("font-size", "20px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-      
+     
+    var focusCritic = svg1
+    .append("g")
+    .append("line")
+        .attr("fill", "none")
+        .attr("stroke-width", 2)
+        .style("opacity", 0)
+
+    var focusUser = svg1
+        .append("g")
+        .append("line")
+            .attr("fill", "none")
+            .attr("stroke-width", 2)
+            .style("opacity", 0)
+
+    var focusBox = svg1
+        .append("g")
+        .append("rect")
+        .style("opacity",0)
+
+    var focusFilm = svg1
+        .append('g')
+        .append('text')
+        .style("font-size", "15px")
+        .attr("font-weight",450)
+        .style("opacity", 0)
+        .attr("fill","white")
+        .attr("text-anchor", "left")
+        .attr("alignment-baseline", "middle")
+
+    var focusMwin = svg1
+        .append("g")
+        .append("line")
+            .attr("fill", "none")
+            .attr("stroke-width", 3)
+            .style("opacity", 0)
+
+    var focusUwin = svg1
+        .append("g")
+        .append("line")
+            .attr("fill", "none")
+            .attr("stroke-width", 3)
+            .style("opacity", 0)
+
+    svg1
+        .append('rect')
+        .style("fill", "none")
+        .style("pointer-events", "all")
+        .attr('width', width)
+        .attr('height', height+60)
+        .on('mouseover', mouseover)
+        .on("mousemove", e => mousemove(d3.pointer(e)))       
+        .on('mouseout', mouseout);
+
+    function mouseover() {
+        focusCritic.style("opacity", 1)
+        focusUser.style("opacity", 1)
+        focusFilm.style("opacity",1)
+        focusBox.style("opacity",1)
+        focusMwin.style("opacity",1)
+        focusUwin.style("opacity",1)
+    }
+
+    function mousemove(coord) {
+        var x0 = Math.round(x1.invert(coord[0]));
+        selectedData = data[x0-1996]
+        yCoord = (y1(selectedData.Critic)+y1(selectedData.User))
+        console.log(selectedData.Critic>selectedData.User)
+        console.log("critic",selectedData.Critic)
+        console.log("user",selectedData.User)
+
+        filmWidth = getWidth(selectedData.Winner, 16, Catamaran)*1.45
+        focusCritic
+        .attr("x1",x1(selectedData.year))
+        .attr("y1", selectedData.Critic>selectedData.User ? y1(selectedData.Critic)+1: yCoord/2)
+        .attr("x2",x1(selectedData.year))
+        .attr("y2",selectedData.User>selectedData.Critic ? y1(selectedData.Critic)-1: yCoord/2)
+        .attr("stroke", selectedData.Mwin == 1 ? "#f5992b" : "#474747")
+        focusUser
+        .attr("x1",x1(selectedData.year))
+        .attr("y1", selectedData.Critic>selectedData.User ? y1(selectedData.User)-1: yCoord/2)
+        .attr("x2",x1(selectedData.year))
+        .attr("y2", selectedData.User>selectedData.Critic ? y1(selectedData.User)+1: yCoord/2)
+        .attr("stroke", selectedData.Uwin == 1 ? "#00a1c1" : "#474747")
+        focusFilm
+            .html(selectedData.Winner)
+            .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+7 : selectedData.year > 2020 ? x1(selectedData.year)-filmWidth+2: x1(selectedData.year)-filmWidth*.46)
+            .attr("y", selectedData.year < 1999 ? yCoord/2-13.5: yCoord/2)
+        focusBox
+            .attr("x", selectedData.year < 1997 ? x1(selectedData.year)+2 : selectedData.year > 2020 ? x1(selectedData.year)-filmWidth : x1(selectedData.year)-filmWidth*.5)
+            .attr("y", selectedData.year < 1999 ? yCoord/2-29: yCoord/2-13.5)
+            .attr("width", filmWidth)
+            .attr("height", 27)
+            .attr("fill","#383838")
+            .attr("stroke", "#474747")
+            .attr("stroke-width", 2)
+            .attr("stroke-linejoin","round")
+        focusMwin
+        .style("opacity", selectedData.Mwin == 1 ? 1 : 0)
+            .attr("x1",(x1(selectedData.year)-filmWidth*.5-.9))
+            .attr("y1", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
+            .attr("x2",(x1(selectedData.year)+filmWidth*.5+.9))
+            .attr("y2", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
+            .attr("stroke", "#f5992b")
+        focusUwin
+        .style("opacity", selectedData.Uwin == 1 ? 1 : 0)
+        .attr("x1",(x1(selectedData.year)-filmWidth*.5-.9))
+        .attr("y1", parseInt(selectedData.User)>parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
+        .attr("x2",(x1(selectedData.year)+filmWidth*.5+.9))
+        .attr("y2", parseInt(selectedData.User)>parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
+        .attr("stroke", "#00a1c1")
+    }
+
+    function mouseout() {
+        focusCritic.style("opacity", 0)
+        focusUser.style("opacity", 0)
+        focusFilm.style("opacity",0)
+        focusBox.style("opacity",0)
+        focusUwin.style("opacity",0)
+        focusMwin.style("opacity",0)
+    }
     //https://d3-graph-gallery.com/graph/line_cursor.html implementing the cursor info
 })
 
@@ -290,30 +387,10 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/osc
             selectedYear = d.Year
             filmList = []
             longestFilmTitle = 0
-            
-            //https://stackoverflow.com/questions/29031659/calculate-width-of-text-before-drawing-the-text
-            //https://stackoverflow.com/questions/40199805/unable-to-use-a-google-font-on-canvas
-            // Function to find text pixel length
-            let Catamaran = new FontFace(
-                "Catamaran",
-                "url(https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap)"
-              );
-            var BrowserText = (function () {
-                var canvas = document.createElement('canvas'),
-                    context = canvas.getContext('2d');
-
-                function getWidth(text, fontSize, fontFace) {
-                    context.font = fontSize + 'px ' + fontFace;
-                    return context.measureText(text).width;
-                }
-                return {
-                    getWidth: getWidth
-                };
-            })(); 
 
             //Creating film list for the selected year then sorted according to the currently selected rating grou[]
             for (film of data){
-                filmLength = BrowserText.getWidth(film.Film,16,"Catamaran")
+                filmLength = getWidth(film.Film,16,"Catamaran")
                 if (film.Year == selectedYear){
                     if (filmLength > longestFilmTitle) {
                         longestFilmTitle = filmLength
