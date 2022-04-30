@@ -83,47 +83,57 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
 
     svg1.append("g")
         .attr('class', 'axis')
-        .attr("transform","translate(577,525)")
+        .attr("transform","translate(557,525)")
         .call(x1)
         .append("text")
         .attr("fill", "white")
-        .text("Year");
+        .text("Oscar Year");
 
     svg1.append("g")
       .call(d3.axisLeft(y1));
 
     svg1.append("g")
         .attr('class', 'axis')
-        .attr("transform","translate(-30,400)rotate(-90)")
+        .attr("transform","translate(-30,413)rotate(-90)")
         .call(y1)
         .append("text")
         .attr("fill", "white")
-        .text("No. of years the highest rated film won Best Picture");
+        .text("How Often a Group's Highest Rated Film Won Best Picture");
 
-    svg1.append("rect").attr("x", 815).attr("y",320).attr("width",350).attr("height",135).attr("fill","#353535")
-
-    svg1.append("rect").attr("x",847).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#f5992b")
-    svg1.append("rect").attr("x",982).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#00a1c1")
-    svg1.append("text").attr("x", 862).attr("y", 440).text("Metascore (Critical)").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg1.append("text").attr("x",997).attr("y", 440).text("User Score (Audience)").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    //The legend   
+    svg1.append("rect").attr("x", 835).attr("y",285).attr("width",300).attr("height",160).attr("fill","#353535")
+    svg1.append("rect").attr("x", 835).attr("y",283).attr("width",300).attr("height",23).attr("fill","#323232")
+    svg1.append('text').attr("x", 930).attr("y",295).style("font-weight", "600").text("Reading this Chart").style("font-size", "16px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
     
+    343434
+    //Film text and box
+    svg1.append("rect").attr("x", 850).attr("y", 346.5).attr("width", 115).attr("height", 27).attr("fill","#383838").attr("stroke", "#474747").attr("stroke-width", 2).attr("stroke-linejoin","round")
+    svg1.append('text').attr("x", 863).attr("y",360).text("2011: The Artist").style("font-size", "15px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",965).attr("y1", 360).attr("x2",980).attr("y2",360).attr("stroke", "#474747")
+    //Blue line
+    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 346.5).attr("x2",966).attr("y2",346.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 320.5).attr("x2",910).attr("y2",346.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 320.5).attr("x2",980).attr("y2",320.5).attr("stroke", "#00a1c1")
+    //Orange line
+    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 373.5).attr("x2",966).attr("y2",373.5).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 373.5).attr("x2",910).attr("y2",396).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 396).attr("x2",980).attr("y2",396).attr("stroke", "#f5992b")
+    //Words
+    svg1.append('text').attr("x", 983).attr("y",316).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",329).text("highest rated audience film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",355).text("The Best Picture winner").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",369).text("for the selected year.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",391).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",404).text("highest rated critical film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 848).attr("y",422).text("NB, either colour can appear above or below the film depending on the year.").style("font-size", "9px").attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
 
-    svg1.append("line").attr("stroke-width", 3).attr("x1",825).attr("y1", 341.5).attr("x2",995).attr("y2",341.5).attr("stroke", "#f5992b")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 341.5).attr("x2",910).attr("y2",330).attr("stroke", "#f5992b")
-    svg1.append("rect").attr("x", 825).attr("y", 361.5).attr("width", 170).attr("height", 27).attr("fill","#383838").attr("stroke", "#474747").attr("stroke-width", 2).attr("stroke-linejoin","round")
-    svg1.append('text').attr("x", 833).attr("y",375).text("2008: Slumdog Millionaire").style("font-size", "15px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",825).attr("y1", 408.5).attr("x2",995).attr("y2",408.5).attr("stroke", "#00a1c1")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 408.5).attr("x2",910).attr("y2",420).attr("stroke", "#00a1c1")
-
-
-    svg1.append('text').attr("x", 1003).attr("y",331).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 1003).attr("y",344).text("highest rated critical film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-
-    svg1.append('text').attr("x", 1003).attr("y",370).text("The Best Picture winner").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 1003).attr("y",383).text("for the selected year.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-
-    svg1.append('text').attr("x", 1003).attr("y",406).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 1003).attr("y",419).text("highest rated audience film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    //Colour meaning
+    svg1.append("rect").attr("x", 835).attr("y",428).attr("width",300).attr("height",22).attr("fill","#323232")
+    svg1.append("rect").attr("x",995).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#f5992b")
+    svg1.append("rect").attr("x",860).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#00a1c1")
+    svg1.append("text").attr("x", 1010).attr("y", 440).text("Metascore (Critical)").style("font-size", "13px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg1.append("text").attr("x",875).attr("y", 440).text("User Score (Audience)").style("font-size", "13px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    
 
 
     var focusCritic = svg1
@@ -192,22 +202,19 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         var x0 = Math.round(x1.invert(coord[0]));
         selectedData = data[x0-1996]
         yCoord = (y1(selectedData.Critic)+y1(selectedData.User))
-        console.log(selectedData.Critic>selectedData.User)
-        console.log("critic",selectedData.Critic)
-        console.log("user",selectedData.User)
 
         filmWidth = getWidth(selectedData.year + ": " +selectedData.Winner, 16, Catamaran)*1.45
         focusCritic
         .attr("x1",x1(selectedData.year))
-        .attr("y1", selectedData.Critic>selectedData.User ? y1(selectedData.Critic)+1: yCoord/2)
+        .attr("y1", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? y1(selectedData.Critic)+1: yCoord/2)
         .attr("x2",x1(selectedData.year))
-        .attr("y2",selectedData.User>selectedData.Critic ? y1(selectedData.Critic)-1: yCoord/2)
+        .attr("y2",parseInt(selectedData.User)>parseInt(selectedData.Critic) ? y1(selectedData.Critic)-1: yCoord/2)
         .attr("stroke", selectedData.Mwin == 1 ? "#f5992b" : "#474747")
         focusUser
         .attr("x1",x1(selectedData.year))
-        .attr("y1", selectedData.Critic>selectedData.User ? y1(selectedData.User)-1: yCoord/2)
+        .attr("y1", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? y1(selectedData.User)-1: yCoord/2)
         .attr("x2",x1(selectedData.year))
-        .attr("y2", selectedData.User>selectedData.Critic ? y1(selectedData.User)+1: yCoord/2)
+        .attr("y2", parseInt(selectedData.User)>parseInt(selectedData.Critic) ? y1(selectedData.User)+1: yCoord/2)
         .attr("stroke", selectedData.Uwin == 1 ? "#00a1c1" : "#474747")
         focusFilm
             .html(selectedData.year + ": " +selectedData.Winner)
@@ -225,16 +232,16 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         focusMwin
         .style("opacity", selectedData.Mwin == 1 ? 1 : 0)
             .attr("x1", selectedData.year > 2019 ? width1-filmWidth-1 : x1(selectedData.year)-filmWidth*.5-.9)
-            .attr("y1", parseInt(selectedData.Critic)>=parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
+            .attr("y1", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
             .attr("x2", selectedData.year > 2019 ? width1+1 : x1(selectedData.year)+filmWidth*.5+.9)
-            .attr("y2", parseInt(selectedData.Critic)>=parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
+            .attr("y2", parseInt(selectedData.Critic)>parseInt(selectedData.User) ? yCoord/2-13.5 : yCoord/2+13.5)
             .attr("stroke", "#f5992b")
         focusUwin
         .style("opacity", selectedData.Uwin == 1 ? 1 : 0)
         .attr("x1", x1(selectedData.year)-filmWidth*.5-.9)
-        .attr("y1", parseInt(selectedData.User)>parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
+        .attr("y1", parseInt(selectedData.User)>=parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
         .attr("x2", x1(selectedData.year)+filmWidth*.5+.9)
-        .attr("y2", parseInt(selectedData.User)>parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
+        .attr("y2", parseInt(selectedData.User)>=parseInt(selectedData.Critic) ? yCoord/2-13.5 : yCoord/2+13.5)
         .attr("stroke", "#00a1c1")
     }
 
