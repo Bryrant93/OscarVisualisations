@@ -54,7 +54,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
         .y(function(d) { return y1(d.Critic) })
-        .curve(d3.curveStepBefore)
+        .curve(d3.curveStepAfter)
         );
     svg1.append("path")
       .datum(data)
@@ -64,7 +64,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
         .y(function(d) { return y1(d.User) })
-        .curve(d3.curveStepBefore)
+        .curve(d3.curveStepAfter)
         );
     svg1.append("path")
       .datum(data.slice(4))
@@ -74,7 +74,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
         .y(function(d) { return y1(d.Critic) })
-        .curve(d3.curveStepBefore)
+        .curve(d3.curveStepAfter)
         );
 
 
