@@ -102,38 +102,37 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         .text("No. of Times a Group’s Highest Rated Film Won Best Picture");
 
     //The legend   
-    svg1.append("rect").attr("x", 835).attr("y",250).attr("width",300).attr("height",185).attr("fill","#353535")
-    svg1.append("rect").attr("x", 835).attr("y",248).attr("width",300).attr("height",20).attr("fill","#303030")
-    svg1.append('text').attr("x", 940).attr("y",260).style("font-weight", "600").text("Line Legend").style("font-size", "17px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append("rect").attr("x", 835).attr("y",295).attr("width",300).attr("height",20).attr("fill","#303030")
-    svg1.append('text').attr("x", 930).attr("y",305).style("font-weight", "600").text("Tooltip Legend").style("font-size", "17px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("rect").attr("x", 835).attr("y",255).attr("width",300).attr("height",175).attr("fill","#353535").attr("stroke", "#474747").attr("stroke-width", 2)
+    svg1.append("rect").attr("x", 836).attr("y",255).attr("width",298).attr("height",20).attr("fill","#303030")
+    svg1.append('text').attr("x", 940).attr("y",265).style("font-weight", "600").text("Line Legend").style("font-size", "17px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("rect").attr("x", 836).attr("y",300).attr("width",298).attr("height",20).attr("fill","#303030")
+    svg1.append('text').attr("x", 930).attr("y",310).style("font-weight", "600").text("Tooltip Legend").style("font-size", "17px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
     
     //Film text and box
-    svg1.append("rect").attr("x", 850).attr("y", 356.5).attr("width", 115).attr("height", 27).attr("fill","#383838").attr("stroke", "#474747").attr("stroke-width", 2).attr("stroke-linejoin","round")
-    svg1.append('text').attr("x", 863).attr("y",370).text("2011: The Artist").style("font-size", "15px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",965).attr("y1", 370).attr("x2",980).attr("y2",370).attr("stroke", "#474747")
+    svg1.append("rect").attr("x", 850).attr("y", 361.5).attr("width", 115).attr("height", 27).attr("fill","#383838").attr("stroke", "#474747").attr("stroke-width", 2).attr("stroke-linejoin","round")
+    svg1.append('text').attr("x", 863).attr("y",375).text("2011: The Artist").style("font-size", "15px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",965).attr("y1", 375).attr("x2",980).attr("y2",375).attr("stroke", "#474747")
     //Blue line
-    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 356.5).attr("x2",966).attr("y2",356.5).attr("stroke", "#00a1c1")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 330.5).attr("x2",910).attr("y2",356.5).attr("stroke", "#00a1c1")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 330.5).attr("x2",980).attr("y2",330.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 361.5).attr("x2",966).attr("y2",361.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 335.5).attr("x2",910).attr("y2",361.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 335.5).attr("x2",980).attr("y2",335.5).attr("stroke", "#00a1c1")
     //Orange line
-    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 382.5).attr("x2",966).attr("y2",382.5).attr("stroke", "#f5992b")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 382.5).attr("x2",910).attr("y2",406).attr("stroke", "#f5992b")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 406).attr("x2",980).attr("y2",406).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 387.5).attr("x2",966).attr("y2",387.5).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 387.5).attr("x2",910).attr("y2",411).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 411).attr("x2",980).attr("y2",411).attr("stroke", "#f5992b")
     //Words
-    svg1.append('text').attr("x", 983).attr("y",326).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 984).attr("y",339).text("highest rated audience film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 983).attr("y",365).text("The Best Picture winner").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 984).attr("y",379).text("for the selected year.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 983).attr("y",401).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 984).attr("y",414).text("highest rated critical film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 848).attr("y",428).text("NB, either colour can appear above or below the film depending on the year.").style("font-size", "9px").attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",331).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",344).text("highest rated audience film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",370).text("The Best Picture winner").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",384).text("for the selected year.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",406).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",419).text("highest rated critical film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
 
     //Colour meaning
-    svg1.append("rect").attr("x",995).attr("y",275).attr("width",13).attr("height",13).style("fill", "#f5992b")
-    svg1.append("rect").attr("x",905).attr("y",275).attr("width",13).attr("height",13).style("fill", "#00a1c1")
-    svg1.append("text").attr("x", 1015).attr("y", 283).text("Critical").style("font-size", "16px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg1.append("text").attr("x",925).attr("y", 283).text("Audience").style("font-size", "16px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg1.append("rect").attr("x",995).attr("y",280).attr("width",13).attr("height",13).style("fill", "#f5992b")
+    svg1.append("rect").attr("x",905).attr("y",280).attr("width",13).attr("height",13).style("fill", "#00a1c1")
+    svg1.append("text").attr("x", 1015).attr("y", 288).text("Critical").style("font-size", "16px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg1.append("text").attr("x",925).attr("y", 288).text("Audience").style("font-size", "16px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     
 
 
@@ -261,7 +260,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
 
 
 //SECOND GRAPH
-// https://www.d3-graph-gallery.com/graph/scatter_basic.html
+//Adapted from https://www.d3-graph-gallery.com/graph/scatter_basic.html
 
 // set the dimensions and margins of the graph
 const margin = {top: 10, right: 30, bottom: 30, left: 60},
@@ -334,7 +333,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         .append("text")
         .attr("fill", "white")
         .text("Oscar Year");
-    //Janky fix for 1989 x-axis tick
     svg.append("g")
         .append("rect")
         .attr("x", -11)
@@ -370,7 +368,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
     //Add red-box and red-line
     svg.append("rect").attr("x", 410).attr("y",-127).attr("width",396).attr("height",115).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "4,3").style("stroke-width","2.5px")
     svg.append("line").attr("x1", 608).attr("y1",-13.1).attr("x2",608).attr("y2",430.4).attr("fill","#383838").style("stroke", "red").style("stroke-dasharray", "4,3").style("stroke-width","2.5px")
-    // svg.append("rect").attr("x", -15).attr("y",-127).attr("width",410).attr("height",115).attr("fill","#383838")
     svg.append("text").attr("x", -12).attr("y", -90).text(`Critical Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", `${colour}`).attr("class", "title").attr("letter-spacing", "3px")
     svg.append("text").attr("x", -12).attr("y", -42).text(`Audience Ratings`).style("font-size", "43.5px").attr("alignment-baseline","middle").attr("fill", "#343434").attr("class", "title")
 
@@ -403,8 +400,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
     //Variables for remembering if film box is open, and whether it should be shut or not
     var filmBoxOpen = null
     var currentYear = 0
-    
-    
     //Function for everything that happens when a verticle box is selected
     const highlight = function(event,d){
         filmBoxOpen = false
@@ -513,7 +508,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         svg.selectAll(".dots").remove();
         svg.selectAll(".filmtext").remove();
         svg.selectAll(".legend").remove();
-        //https://stackoverflow.com/questions/64688719/how-to-make-a-scatterplot-based-upon-certain-criteria-using-d3-js
         // Move dots to new position and changes shapes and colours
         svg.append('g')
         .attr("class","dots")
@@ -530,7 +524,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
                 return path.toString();
             })
             .on("click", highlight)
-            //https://bl.ocks.org/d3noob/464c92429ac05c6a19a1
             .style("fill", function(d) {
                 if (d.Award == "Winner") {return `${ghostColour}`}
                 else { return "grey" };

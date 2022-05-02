@@ -9,6 +9,7 @@ winnerFrame = MCcritic[MCcritic.Award == 'Winner']
 print("This data was all taken from two datasets downloaded from kaggle. One with all Best Picture nominees and one with over 9000 metacritic entries.")
 print(" ")
 print("As the data I have chosen covers a large time period, and as the further back you go the more incomplete the data becomes I had to find the period which had the most accurate and truthful data.")
+print("I chose 1990 as the starting point for the review data frame as there were many years prior to which had nominees which had recieved no ratings on metacritic.")
 print("The following two histograms display the distribution of films from 1990-2018 by the number of reviews they received.")
 print("Each bin in the critic reviews represents increments of  approximately 20 reviews, while each bin in the user reviews is approximately 60.")
 print("Please note the user review histogram has been truncated, as the second half of the chart was sparsely populated. I have included this separately.")
