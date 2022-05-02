@@ -5,19 +5,18 @@
         <title>Oscar Charts</title>
         <link rel="stylesheet" href="styles.css"></link>
         <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100&family=Limelight&family=Nova+Round&display=swap" rel="stylesheet">
-        <script src="https://d3js.org/d3.v7.min.js" defer></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
     </head>
     <body>
-        <h1>Are the Academy out of touch?</h1>
-        <div class="para">Every year the Academy Awards roll around, and people talk about how the Academy voters are out of touch with the general cinema-going population. Accusations that they are only interested in giving ‘oscarbait’ films the Best Picture Oscar are abound. But how true is that?</div>
-        <h2>How often are Critic's and Audience's choice reflected in Best Picture winner?</h2>
-        <div class="para">I have taken data from the aggregate review site MetaCritic, and compared their Metascore (a weighted average of the ratings given by a curated list of critics, referred to as "Critical" from this point on) and User Score (an average of user submitted ratings, referred to as "Audience" from this point on) for every film nominated for Best Picture since 1996. The following visualisation tracks how often either group's highest rated Best Picture nominee went on to win the Academy Award. Mouse over the chart to see the winner for any given year, and whether it was either rating group's highest rated film of the nominees.</div>
+        <h1>Are the Academy Out of Touch?</h1>
+        <div class="para">Every year the Academy Awards roll around, and people talk about how the Academy voters are out of touch with the general cinema-going population. Accusations that they are only interested in giving critically acclaimed ‘oscarbait’ films the Best Picture Oscar are abound. But how true is that? I have taken data from the aggregate review site MetaCritic, and compared their Metascore (a weighted average of the ratings given by a curated list of critics, referred to as "Critical" from this point on) and User Score (an average of user submitted ratings, referred to as "Audience" from this point on) for every film nominated for Best Picture since 1996. </div>
+        <h2>Critical and Audience Choice</h2>
+        <div class="para">The following visualisation tracks how often either group's highest rated Best Picture nominee went on to win the Academy Award for that year. Mouse over the chart to see the winner for any given year, and whether it was either the highest rated Critical or Audience film of that year's nominees.</div>
         <div class="note">Note: The figures displayed on this chart are inclusive only of the period concerned. There were occasions prior to 1996 where either or both group's highest rated Best Picture Nominee went on to win the Award.</div>
         <div id="my_dataviz"></div>
         <h3>Critic versus Audience Consensus</h3>
-        <div class="para">The following visualisation takes a more in depth look at the data used in the first visualisation. It displays the aggregate rating from both groups for each Best Picture Nominee for the years 1996-2021. You can switch between the critical and audience ratings by clicking the buttons on the right, and can view a ranked list of films nominated each year by clicking the corresponding vertical grey boxes on the chart. Comparing how often either group's highest rated film won Best Picture by noting the occasions the results are displayed as stars on the chart. </div>
+        <div class="para">The following visualisation takes a more in depth look at the data used in the first visualisation. It displays the aggregate Critical and Audience rating for each Best Picture Nominee for the years 1996-2021. You can switch between the Critical and Audience ratings by clicking the buttons on the right, and can view a ranked list of films nominated each year by clicking the corresponding vertical grey boxes on the chart. Compare how often either group's highest rated film won Best Picture by noting the occasions the results are displayed as stars on the chart. </div>
             <div id=flexbox>
                 <div class="para"></div>
                 <div id="empty">In 2009 the Academy changed the rules around the Best Picture award, increasing the number of nominees to ten and introducing a modified version of instant runoff voting, a change which some suggested would allow more generic films to win.</div>
@@ -28,6 +27,6 @@
         
         <div id="my_dataviz2"></div>    
         <div id="my_dataviz3"></div>    
-        <script src="index.js" defer></script>
+        <script src="index.js"></script>
     </body>
 </html>

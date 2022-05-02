@@ -95,11 +95,11 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
 
     svg1.append("g")
         .attr('class', 'axis')
-        .attr("transform","translate(-30,413)rotate(-90)")
+        .attr("transform","translate(-30,428)rotate(-90)")
         .call(y1)
         .append("text")
         .attr("fill", "white")
-        .text("How Often a Group's Highest Rated Film Won Best Picture");
+        .text("No. of Times a Group’s Highest Rated Film Won Best Picture");
 
     //The legend   
     svg1.append("rect").attr("x", 835).attr("y",250).attr("width",300).attr("height",185).attr("fill","#353535")
@@ -198,7 +198,14 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
     function mousemove(coord) {
         var x0 = Math.round(x1.invert(coord[0]));
         selectedData = data[x0-1996]
-        yCoord = (y1(selectedData.Critic)+y1(selectedData.User))
+        if (selectedData.Mwin=="1"||selectedData.Uwin=="1") {
+            yCoord = (y1(selectedData.Critic)+y1(selectedData.User-1))
+        }
+        else {
+            yCoord = (y1(selectedData.Critic)+y1(selectedData.User))
+        }
+        console.log(((parseInt(selectedData.Critic)+parseInt(selectedData.User))-1)/2)
+        console.log(((parseInt(selectedData.Critic)+parseInt(selectedData.User)))/2)
 
         filmWidth = getWidth(selectedData.year + ": " +selectedData.Winner, 16, Catamaran)*1.45
         focusCritic

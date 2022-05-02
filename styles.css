@@ -145,14 +145,12 @@ svg {
 }
 
 .criticSelected {
-    background:#ee8b12 !important;
     color: rgb(240, 240, 240) !important;
     border: 2px solid #e87411 !important;
     border-right: 15px solid #e87411 !important;
     border-bottom: none !important;
   }
 .audienceSelected {
-    background:#00829c !important;
     color: rgb(240, 240, 240) !important;
     border-bottom: none !important;
     border-left: 2px solid #004c6d !important;

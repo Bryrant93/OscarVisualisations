@@ -6,11 +6,12 @@ reviewFrame = pd.read_csv("reviewNumberFrame1990.csv")
 reviewFrameCut = pd.read_csv("reviewNumberFrame1996.csv")
 MCcritic = pd.read_csv("oscarFrameFinal.csv")
 winnerFrame = MCcritic[MCcritic.Award == 'Winner']
-
-print("As the data I have chosen covers a large time period, and the further back you went the more incomplete the data became I had to decide on the period which had the most accurate and truthful data.")
+print("This data was all taken from two datasets downloaded from kaggle. One with all Best Picture nominees and one with over 9000 metacritic entries.")
+print(" ")
+print("As the data I have chosen covers a large time period, and as the further back you go the more incomplete the data becomes I had to find the period which had the most accurate and truthful data.")
 print("The following two histograms display the distribution of films from 1990-2018 by the number of reviews they received.")
-print("Each bin in the critic reviews is approximately 20, while each bin in the user reviews in approximately 60.")
-print("Please note the user review histogram has been dramatically truncated, as the second half of the chart was sparsely populated. I have included this separately.")
+print("Each bin in the critic reviews represents increments of  approximately 20 reviews, while each bin in the user reviews is approximately 60.")
+print("Please note the user review histogram has been truncated, as the second half of the chart was sparsely populated. I have included this separately.")
 plt.hist(reviewFrame["Meta"],25)
 plt.title("Number of critical reviews recieved by Best Picture Nominees 1990-2018")
 plt.show()
@@ -22,7 +23,7 @@ plt.hist(reviewFrame["User"],66)
 plt.title("Number of user reviews recieved by Best Picture Nominees 1990-2018 (2000+)")
 plt.xlim(xmin=2000)
 plt.show()
-print("These were not hugely enlightening, so I decided to examine the data in a scattergraph so I could see the distribution of number of films by year.")
+print("These were not hugely enlightening by themselves, so I decided to examine the data in a scattergraph so I could see the distribution of number of films by year.")
 print(" ")
 
 plt.scatter(reviewFrame["Year of Release"], reviewFrame["Meta"], s=2,c="grey")
@@ -54,7 +55,6 @@ plt.scatter(winnerFrame.Year,winnerFrame.MetaScore,s=2.5,c="orange")
 plt.title("Critical ratings of Best Picture nominees between 1996-2021, winner displayed in orange")
 plt.ylim(ymin=0,ymax=100)
 plt.show()
-
 plt.scatter(MCcritic.Year,MCcritic.UserScore,s=2,c="grey")
 plt.scatter(winnerFrame.Year,winnerFrame.UserScore,s=2.5,c="blue")
 plt.title("User ratings of Best Picture nominees between 1996-2021, winner displayed in blue")
@@ -62,5 +62,5 @@ plt.ylim(ymin=0,ymax=100)
 plt.show()
 print(" ")
 
-## Press Run Above to see the two main bits of data analysis I did for this project.
+## Press Run Above to see the data analysis I did for this project.
 #%%
