@@ -116,8 +116,8 @@ svg {
     background:#f5992b;
     height: 50px;
     width: 120px;
+    border:none;
     border-right: 15px solid #e87411;
-    border-bottom: none;
     color: #fff;
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
@@ -131,8 +131,10 @@ svg {
     background:#00a1c1;
     height: 50px;
     width: 120px;
+    border-left: none;
     border-right: 15px solid #004c6d;
     border-top: none;
+    border-bottom: 2px solid #004c6d;
     color: #fff;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
@@ -140,8 +142,22 @@ svg {
     font-family: Limelight;
     font-size: 1.05em;
     font-weight: 600;
-
 }
+
+.criticSelected {
+    background:#ee8b12 !important;
+    color: rgb(240, 240, 240) !important;
+    border: 2px solid #e87411 !important;
+    border-right: 15px solid #e87411 !important;
+    border-bottom: none !important;
+  }
+.audienceSelected {
+    background:#00829c !important;
+    color: rgb(240, 240, 240) !important;
+    border-bottom: none !important;
+    border-left: 2px solid #004c6d !important;
+  }
+
 
 @media (max-width: 1279px){
     #flexbox {

@@ -1,20 +1,19 @@
-//https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html
-
+// Function to find pixel length of film titles. Used in both visualisations
 //https://stackoverflow.com/questions/29031659/calculate-width-of-text-before-drawing-the-text
 //https://stackoverflow.com/questions/40199805/unable-to-use-a-google-font-on-canvas
-// Function to find pixel length of film titles. Used in both visualisations
 let Catamaran = new FontFace(
     "Catamaran",
     "url(https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap)"
     );
-    function getWidth(text, fontSize, fontFace) {
-        var canvas = document.createElement('canvas'),
-        context = canvas.getContext('2d');
-        context.font = fontSize + 'px ' + fontFace;
-        return context.measureText(text).width;
-    }
+function getWidth(text, fontSize, fontFace) {
+    var canvas = document.createElement('canvas'),
+    context = canvas.getContext('2d');
+    context.font = fontSize + 'px ' + fontFace;
+    return context.measureText(text).width;
+}
 
-
+//First graph
+//Adapted from https://d3-graph-gallery.com/graph/line_cursor.html 
 // set the dimensions and margins of the graph
 const margin1 = {top: 10, right: 30, bottom: 20, left: 50},
     width1 = 1260 - margin1.left - margin1.right,
@@ -28,7 +27,6 @@ const svg1 = d3.select("#my_dataviz")
   .append("g")
     .attr("transform",`translate(${margin1.left},${margin1.top})`);
 
-// Parse the Data
 d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Data%20Analysis/winnerLine.csv").then(function(data) {
     
     // Add X axis 
@@ -47,7 +45,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
           .tickFormat("")
         )
     
-    // Add the line
+    // Add the lines
     svg1.append("path")
       .datum(data)
       .attr("fill", "none")
@@ -56,6 +54,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
         .y(function(d) { return y1(d.Critic) })
+        .curve(d3.curveStepBefore)
         );
     svg1.append("path")
       .datum(data)
@@ -65,6 +64,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
         .y(function(d) { return y1(d.User) })
+        .curve(d3.curveStepBefore)
         );
     svg1.append("path")
       .datum(data.slice(4))
@@ -74,6 +74,7 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
       .attr("d", d3.line()
         .x(function(d) { return x1(d.year) })
         .y(function(d) { return y1(d.Critic) })
+        .curve(d3.curveStepBefore)
         );
 
 
@@ -101,60 +102,58 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         .text("How Often a Group's Highest Rated Film Won Best Picture");
 
     //The legend   
-    svg1.append("rect").attr("x", 835).attr("y",285).attr("width",300).attr("height",160).attr("fill","#353535")
-    svg1.append("rect").attr("x", 835).attr("y",283).attr("width",300).attr("height",23).attr("fill","#323232")
-    svg1.append('text').attr("x", 930).attr("y",295).style("font-weight", "600").text("Reading this Chart").style("font-size", "16px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("rect").attr("x", 835).attr("y",250).attr("width",300).attr("height",185).attr("fill","#353535")
+    svg1.append("rect").attr("x", 835).attr("y",248).attr("width",300).attr("height",20).attr("fill","#303030")
+    svg1.append('text').attr("x", 940).attr("y",260).style("font-weight", "600").text("Line Legend").style("font-size", "17px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("rect").attr("x", 835).attr("y",295).attr("width",300).attr("height",20).attr("fill","#303030")
+    svg1.append('text').attr("x", 930).attr("y",305).style("font-weight", "600").text("Tooltip Legend").style("font-size", "17px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
     
-    343434
     //Film text and box
-    svg1.append("rect").attr("x", 850).attr("y", 346.5).attr("width", 115).attr("height", 27).attr("fill","#383838").attr("stroke", "#474747").attr("stroke-width", 2).attr("stroke-linejoin","round")
-    svg1.append('text').attr("x", 863).attr("y",360).text("2011: The Artist").style("font-size", "15px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",965).attr("y1", 360).attr("x2",980).attr("y2",360).attr("stroke", "#474747")
+    svg1.append("rect").attr("x", 850).attr("y", 356.5).attr("width", 115).attr("height", 27).attr("fill","#383838").attr("stroke", "#474747").attr("stroke-width", 2).attr("stroke-linejoin","round")
+    svg1.append('text').attr("x", 863).attr("y",370).text("2011: The Artist").style("font-size", "15px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",965).attr("y1", 370).attr("x2",980).attr("y2",370).attr("stroke", "#474747")
     //Blue line
-    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 346.5).attr("x2",966).attr("y2",346.5).attr("stroke", "#00a1c1")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 320.5).attr("x2",910).attr("y2",346.5).attr("stroke", "#00a1c1")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 320.5).attr("x2",980).attr("y2",320.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 356.5).attr("x2",966).attr("y2",356.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 330.5).attr("x2",910).attr("y2",356.5).attr("stroke", "#00a1c1")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 330.5).attr("x2",980).attr("y2",330.5).attr("stroke", "#00a1c1")
     //Orange line
-    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 373.5).attr("x2",966).attr("y2",373.5).attr("stroke", "#f5992b")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 373.5).attr("x2",910).attr("y2",396).attr("stroke", "#f5992b")
-    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 396).attr("x2",980).attr("y2",396).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",849).attr("y1", 382.5).attr("x2",966).attr("y2",382.5).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",910).attr("y1", 382.5).attr("x2",910).attr("y2",406).attr("stroke", "#f5992b")
+    svg1.append("line").attr("stroke-width", 3).attr("x1",908.5).attr("y1", 406).attr("x2",980).attr("y2",406).attr("stroke", "#f5992b")
     //Words
-    svg1.append('text').attr("x", 983).attr("y",316).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 984).attr("y",329).text("highest rated audience film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 983).attr("y",355).text("The Best Picture winner").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 984).attr("y",369).text("for the selected year.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 983).attr("y",391).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 984).attr("y",404).text("highest rated critical film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
-    svg1.append('text').attr("x", 848).attr("y",422).text("NB, either colour can appear above or below the film depending on the year.").style("font-size", "9px").attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",326).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",339).text("highest rated audience film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",365).text("The Best Picture winner").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",379).text("for the selected year.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 983).attr("y",401).text("This Best Picture winner was").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 984).attr("y",414).text("highest rated critical film.").style("font-size", "12px").attr("font-weight",450).attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
+    svg1.append('text').attr("x", 848).attr("y",428).text("NB, either colour can appear above or below the film depending on the year.").style("font-size", "9px").attr("fill","#F5FAFD").attr("alignment-baseline", "middle")
 
     //Colour meaning
-    svg1.append("rect").attr("x", 835).attr("y",428).attr("width",300).attr("height",22).attr("fill","#323232")
-    svg1.append("rect").attr("x",995).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#f5992b")
-    svg1.append("rect").attr("x",860).attr("y",433.5).attr("width",10).attr("height",10).style("fill", "#00a1c1")
-    svg1.append("text").attr("x", 1010).attr("y", 440).text("Metascore (Critical)").style("font-size", "13px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
-    svg1.append("text").attr("x",875).attr("y", 440).text("User Score (Audience)").style("font-size", "13px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg1.append("rect").attr("x",995).attr("y",275).attr("width",13).attr("height",13).style("fill", "#f5992b")
+    svg1.append("rect").attr("x",905).attr("y",275).attr("width",13).attr("height",13).style("fill", "#00a1c1")
+    svg1.append("text").attr("x", 1015).attr("y", 283).text("Critical").style("font-size", "16px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
+    svg1.append("text").attr("x",925).attr("y", 283).text("Audience").style("font-size", "16px").attr("alignment-baseline","middle").attr("fill", "#f5f5f5")
     
 
 
+    //Anything that appears as part of the tooltip
     var focusCritic = svg1
     .append("g")
     .append("line")
         .attr("fill", "none")
-        .attr("stroke-width", 2)
+        .attr("stroke-width", 2.5)
         .style("opacity", 0)
-
     var focusUser = svg1
         .append("g")
         .append("line")
             .attr("fill", "none")
-            .attr("stroke-width", 2)
+            .attr("stroke-width", 2.5)
             .style("opacity", 0)
-
     var focusBox = svg1
         .append("g")
         .append("rect")
         .style("opacity",0)
-
     var focusFilm = svg1
         .append('g')
         .append('text')
@@ -164,21 +163,19 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         .attr("fill","#F5FAFD")
         .attr("text-anchor", "left")
         .attr("alignment-baseline", "middle")
-
     var focusMwin = svg1
         .append("g")
         .append("line")
             .attr("fill", "none")
-            .attr("stroke-width", 3)
+            .attr("stroke-width", 2.25)
             .style("opacity", 0)
-
     var focusUwin = svg1
         .append("g")
         .append("line")
             .attr("fill", "none")
-            .attr("stroke-width", 3)
+            .attr("stroke-width", 2.25)
             .style("opacity", 0)
-
+    // invisible box to track the mouse
     svg1
         .append('rect')
         .style("fill", "none")
@@ -253,7 +250,6 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         focusUwin.style("opacity",0)
         focusMwin.style("opacity",0)
     }
-    //https://d3-graph-gallery.com/graph/line_cursor.html implementing the cursor info
 })
 
 
@@ -585,3 +581,13 @@ d3.csv("https://raw.githubusercontent.com/Bryrant93/OscarVisualisations/main/Dat
         }   
     }
 })
+
+// Jquery for indented button press
+$('#Audience').on('click', function(){
+    $('#Critic').removeClass('criticSelected');
+    $(this).addClass('audienceSelected');
+});
+$('#Critic').on('click', function(){
+    $('#Audience').removeClass('audienceSelected');
+    $(this).addClass('criticSelected');
+});
